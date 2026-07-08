@@ -1,0 +1,1 @@
+# marketing-synapse-ai-scanner
