@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+.next/
+dist/
+build/
+.env
+.env.*
+.superpowers/
+*.log
+# Excluir video pesado para no superar límites de GitHub
+CREATIVO 3 - LANDING .mp4
