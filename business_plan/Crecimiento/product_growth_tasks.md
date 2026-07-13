@@ -1,8 +1,8 @@
 # Product Growth — Experimentos de Retención Trial → Pago
 
-> Mantenido por `/product`. Backlog de experimentos de producto/automatización (no de diseño frontend) para mejorar la conversión entre el día 1 y el día 15 del trial. Cada experimento se prioriza y se registra su resultado en `ESTRATEGIA.md` una vez corrido.
+> Mantenido por `/product`. Backlog de experimentos de producto/automatización (no de diseño frontend) para mejorar la conversión entre el día 1 y el día 15 del trial. Cada experimento se prioriza y se registra su resultado en `../../ESTRATEGIA.md` una vez corrido.
 
-Métrica norte oficial (decidida 2026-07-06, ver `ESTRATEGIA.md` sección 1): **% de trials que llegan al día 15 y convierten a STANDARD o superior**.
+Métrica norte oficial (decidida 2026-07-06, ver `../../ESTRATEGIA.md` sección 1): **% de trials que llegan al día 15 y convierten a STANDARD o superior**.
 
 ---
 

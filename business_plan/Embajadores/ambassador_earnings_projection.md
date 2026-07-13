@@ -1,6 +1,6 @@
 # Proyección de Ingresos para Embajadores — 12 Meses
 
-> Mantenido por `/product`. Proyección de cuánto gana UN embajador (y el grupo de 10) bajo un escenario concreto de volumen y retención. A diferencia de `financial_model.md`, esta proyección no depende de los costos operativos pendientes (fee de pago, costo de soporte) — esos son costos de Synapse, no afectan la comisión que recibe el embajador. Sí depende de la política de renovación (ver nota al final), que aún está pendiente de decidir.
+> Mantenido por `/product`. Proyección de cuánto gana UN embajador (y el grupo de 10) bajo un escenario concreto de volumen y retención. A diferencia de `../Finanzas/financial_model.md`, esta proyección no depende de los costos operativos pendientes (fee de pago, costo de soporte) — esos son costos de Synapse, no afectan la comisión que recibe el embajador. Sí depende de la política de renovación (ver nota al final), que aún está pendiente de decidir.
 
 ---
 
@@ -45,12 +45,12 @@ Si el precio usado es el oficial STANDARD ($249) en vez de lanzamiento:
 | Comisión total pagada a los 10 embajadores | **≈ $141,603.60** | **≈ $178,981.20** |
 | Promedio por embajador | ≈ $14,160.36 | ≈ $17,898.12 |
 
-(Estas cifras coinciden con el total de comisiones calculado en el escenario de negocio completo de la conversación — ver también `financial_model.md` para el margen neto de Synapse en el mismo escenario.)
+(Estas cifras coinciden con el total de comisiones calculado en el escenario de negocio completo de la conversación — ver también `../Finanzas/financial_model.md` para el margen neto de Synapse en el mismo escenario.)
 
 ---
 
 ## 4. Qué NO está resuelto todavía
 
-- **Política de renovación (pendiente, ver `pricing_strategy.md` sección 3):** esta proyección asume que la renovación se cobra al mismo precio que la primera compra (lanzamiento o el oficial, consistente en toda la cohorte). Si en la práctica la renovación siempre es a precio oficial aunque la primera venta fue de lanzamiento, el ingreso real del embajador quedaría entre los dos escenarios de la tabla.
-- Esta proyección asume que el 40% de retención trimestral es una suposición hipotética para efectos de planeación — no es un dato medido todavía. En cuanto exista una tasa de reconsumo real (ver `tasa_reconsumo` en `financial_model.md` sección 4), esta hoja debe recalcularse con el dato real.
+- **Política de renovación (pendiente, ver `../Pricing_y_Pagos/pricing_strategy.md` sección 3):** esta proyección asume que la renovación se cobra al mismo precio que la primera compra (lanzamiento o el oficial, consistente en toda la cohorte). Si en la práctica la renovación siempre es a precio oficial aunque la primera venta fue de lanzamiento, el ingreso real del embajador quedaría entre los dos escenarios de la tabla.
+- Esta proyección asume que el 40% de retención trimestral es una suposición hipotética para efectos de planeación — no es un dato medido todavía. En cuanto exista una tasa de reconsumo real (ver `tasa_reconsumo` en `../Finanzas/financial_model.md` sección 4), esta hoja debe recalcularse con el dato real.
 - Asume ritmo constante de 10 clientes nuevos/mes por embajador durante los 12 meses — en la realidad el ritmo de cada embajador variará.

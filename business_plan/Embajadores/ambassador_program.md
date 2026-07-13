@@ -1,6 +1,6 @@
 # Programa de Embajadores — Comisiones
 
-> Mantenido por `/product`. Fuente de verdad de la estructura de comisiones para embajadores/afiliados que venden el Scanner. Depende de `pricing_strategy.md` (planes y precios) — cualquier cambio de precio ahí impacta el cálculo de comisión aquí.
+> Mantenido por `/product`. Fuente de verdad de la estructura de comisiones para embajadores/afiliados que venden el Scanner. Depende de `../Pricing_y_Pagos/pricing_strategy.md` (planes y precios) — cualquier cambio de precio ahí impacta el cálculo de comisión aquí.
 
 **Decisión oficial (2026-07-06):** comisión escalonada por cliente referido, no un 50% recurrente plano de por vida.
 

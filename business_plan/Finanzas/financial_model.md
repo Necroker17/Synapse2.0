@@ -1,6 +1,6 @@
 # Modelo Financiero — Margen y Proyecciones
 
-> Mantenido por `/product`. Este documento define las FÓRMULAS del margen por plan y de las proyecciones financieras. Los datos duros de precio y comisión ya están confirmados (`pricing_strategy.md`, `ambassador_program.md`); los costos operativos NO están confirmados todavía — aparecen aquí como variables de entrada, nunca como números inventados. Este archivo es el insumo directo para el prompt de Google Sheets (`google_sheets_prompt.md`).
+> Mantenido por `/product`. Este documento define las FÓRMULAS del margen por plan y de las proyecciones financieras. Los datos duros de precio y comisión ya están confirmados (`../Pricing_y_Pagos/pricing_strategy.md`, `../Embajadores/ambassador_program.md`); los costos operativos NO están confirmados todavía — aparecen aquí como variables de entrada, nunca como números inventados. Este archivo es el insumo directo para el prompt de Google Sheets (`google_sheets_prompt.md`).
 
 ---
 
@@ -15,15 +15,15 @@
 | TradingView Premium | $85 |
 | Make (automatizaciones) | $10 |
 | Manychat (secuencia WhatsApp, Experimento 1) | $25 |
-| Skool | $10 |
+| ~~Skool~~ | ~~$10~~ — dado de baja (2026-07-12), educación migrada a Hotmart Club, incluido sin costo extra en la cuenta Hotmart |
 | Claude | $20 |
-| **Total `costo_fijo_mensual_negocio`** | **$150** |
+| **Total `costo_fijo_mensual_negocio`** | **$140** |
 
-### 1.2 Costos aún sin confirmar
+### 1.2 Costos confirmados / aún sin confirmar
 
 | Variable | Qué representa | Valor |
 |---|---|---|
-| `fee_pago` | % de comisión de la pasarela de pago/procesador (Stripe, etc.) | *(pendiente)* |
+| `fee_pago` | Comisión del procesador de pago — **Hotmart** (decisión oficial 2026-07-10, ver `../Pricing_y_Pagos/payment_processing.md`) | **9.9% + $0.50 USD por transacción aprobada** (+ $1 USD por solicitud de retiro, no por venta) |
 | `costo_soporte_mensual` | Costo de soporte/comunidad por cliente activo al mes (moderación WhatsApp, clases en vivo, prorrateo de tiempo del equipo — es costo de tiempo/labor, no de herramienta, así que no está cubierto por la tabla 1.1) | *(pendiente)* |
 | `costo_herramientas_mensual` (por cliente) | Prorrateo por cliente de alguna herramienta que sí escale con el número de clientes (si aplica alguna, distinta a los costos fijos de 1.1) | *(pendiente — probablemente $0 si ninguna herramienta cobra por cliente)* |
 
@@ -53,13 +53,28 @@ margen_neto            = ingreso_neto_pago − comision_embajador − costo_oper
 margen_neto_%          = margen_neto / precio_plan
 ```
 
-Nota: esta fórmula de margen "por venta" NO incluye `costo_fijo_mensual_negocio` (los $150/mes de TradingView + Make + Manychat + Skool + Claude) porque ese costo no varía con el número de clientes — se resta a nivel negocio, no a nivel de una venta individual. Ver la fórmula de proyección mensual (sección 4) para dónde entra.
+Nota: esta fórmula de margen "por venta" NO incluye `costo_fijo_mensual_negocio` (los $140/mes de TradingView + Make + Manychat + Claude) porque ese costo no varía con el número de clientes — se resta a nivel negocio, no a nivel de una venta individual. Ver la fórmula de proyección mensual (sección 4) para dónde entra.
 
 Para una venta **sin embajador** (adquisición directa, sin comisión):
 
 ```
 margen_neto = ingreso_neto_pago − costo_operativo_plan
 ```
+
+### 2.1 Margen bruto recalculado con `fee_pago` confirmado (2026-07-10)
+
+`ingreso_neto_pago = precio_plan × (1 − 0.099) − 0.50`. **Aún NO es el margen final** — falta restar `costo_operativo_plan` (soporte + herramientas por cliente), que sigue pendiente (sección 1.2). Esta tabla es el margen bruto tras pasarela de pago y comisión de embajador, insumo directo para cuando lleguen los costos operativos.
+
+| Plan | Precio | Ingreso neto (post-Hotmart) | Margen bruto directo (0% comisión) | Margen bruto 1ra venta (50%) | Margen bruto re-consumo (25%) |
+|---|---|---|---|---|---|
+| STANDARD | $197 (lanzamiento) | $176.99 | $176.99 | $78.49 | $127.74 |
+| STANDARD | $249 (oficial) | $223.85 | $223.85 | $99.35 | $161.60 |
+| PRO | $299 (lanzamiento) | $268.90 | $268.90 | $119.40 | $194.15 |
+| PRO | $397 (oficial) | $357.20 | $357.20 | $158.70 | $257.95 |
+| PREMIUM | $699 (lanzamiento) | $629.30 | $629.30 | $279.80 | $454.55 |
+| PREMIUM | $799 (oficial) | $719.40 | $719.40 | $319.90 | $519.65 |
+
+**Peor caso vigilado (sección 3):** PREMIUM re-consumo a precio oficial deja **$519.65 de margen bruto** por renovación tras Hotmart + comisión del embajador (comisión de $199.75 sobre el precio de $799) — sigue siendo saludable incluso antes de restar soporte/herramientas.
 
 ---
 
@@ -90,7 +105,7 @@ Para proyectar ingresos y margen a nivel negocio (no solo por venta), se necesit
 | Variable | Qué representa |
 |---|---|
 | `trials_iniciados_mes` | Cuántos trials de 15 días arrancan por mes |
-| `tasa_conversion_trial_pago` | % de trials que llegan al día 15 y convierten (la métrica norte ya definida en `ESTRATEGIA.md`) |
+| `tasa_conversion_trial_pago` | % de trials que llegan al día 15 y convierten (la métrica norte ya definida en `../../ESTRATEGIA.md`) |
 | `mix_planes` | % de conversiones que eligen STANDARD vs. PRO vs. PREMIUM |
 | `%_ventas_via_embajador` | % de las conversiones que vienen de un embajador (vs. adquisición directa) |
 | `tasa_reconsumo` | % de clientes que renuevan al menos una vez tras su primer ciclo |
@@ -107,7 +122,7 @@ comision_pagada_mes         = Σ (clientes_via_embajador_por_plan × precio_plan
 margen_neto_mes             = ingreso_bruto_mes − comision_pagada_mes − costo_fijo_mensual_negocio − costos_variables_totales_mes
 ```
 
-Donde `costo_fijo_mensual_negocio` = $150/mes (sección 1.1, ya confirmado) y `costos_variables_totales_mes` = los costos de soporte/herramientas por cliente de la sección 1.2 (aún pendientes) × número de clientes activos ese mes.
+Donde `costo_fijo_mensual_negocio` = $140/mes (sección 1.1, ya confirmado) y `costos_variables_totales_mes` = los costos de soporte/herramientas por cliente de la sección 1.2 (aún pendientes) × número de clientes activos ese mes.
 
 Ninguna de estas variables tiene valor todavía — son los inputs que la hoja de Sheets debe dejar editables para correr distintos escenarios (optimista/base/conservador).
 

@@ -6,9 +6,9 @@
 
 Actúa como analista financiero. Vas a construir un modelo financiero en Google Sheets para Synapse AI Scanner a partir de tres documentos fuente en este repo — léelos primero, no inventes ningún dato que no esté ahí:
 
-1. `indicators/v3-SynapseAI_Scanner/marketing/business_plan/pricing_strategy.md` — precios y duración de los 3 planes (STANDARD/PRO/PREMIUM).
-2. `indicators/v3-SynapseAI_Scanner/marketing/business_plan/ambassador_program.md` — estructura de comisión de embajadores (50% primera venta, 25% re-consumos en adelante).
-3. `indicators/v3-SynapseAI_Scanner/marketing/business_plan/financial_model.md` — las fórmulas exactas de margen y proyección, y la lista de variables de costo/volumen que AÚN NO tienen valor confirmado.
+1. `indicators/v3-SynapseAI_Scanner/marketing/business_plan/Pricing_y_Pagos/pricing_strategy.md` — precios y duración de los 3 planes (STANDARD/PRO/PREMIUM).
+2. `indicators/v3-SynapseAI_Scanner/marketing/business_plan/Embajadores/ambassador_program.md` — estructura de comisión de embajadores (50% primera venta, 25% re-consumos en adelante).
+3. `indicators/v3-SynapseAI_Scanner/marketing/business_plan/Finanzas/financial_model.md` — las fórmulas exactas de margen y proyección, y la lista de variables de costo/volumen que AÚN NO tienen valor confirmado.
 
 Crea una hoja de Google Sheets nueva con estas pestañas:
 

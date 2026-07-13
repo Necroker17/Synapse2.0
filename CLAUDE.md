@@ -15,6 +15,13 @@ manual_marketing.md            ← Base de conocimiento del producto en narrativ
 DESCRIPTION.txt                ← Descripción para la tienda/comunidad de TradingView
 Landing_Meli/                  ← Landing v1 (archivada; ex Landing_page) — su spec: Landing_Meli/CLAUDE.md
 Landing_SynapseAI/             ← Landing v2 ACTIVA, estilo TradingView institucional — su spec: Landing_SynapseAI/CLAUDE.md
+business_plan/                 ← Modelo de negocio, categorizado en subcarpetas:
+  Finanzas/                     ← financial_model.md, profit_split.md, reporte_proyeccion_2026.md, synapse_business_plan.xlsx + build_business_plan_xlsx.py, google_sheets_prompt.md
+  Embajadores/                  ← ambassador_program.md (comisiones), ambassador_earnings_projection.md, ambassador_scenarios.md
+  Pricing_y_Pagos/               ← pricing_strategy.md, payment_processing.md
+  Crecimiento/                  ← product_growth_tasks.md (experimentos de retención)
+  Hotmart/                      ← Montaje del producto en Hotmart — su mapa: business_plan/Hotmart/README.md
+Formularios/                   ← Formularios reales ya construidos y en vivo (Google Forms) — fuente de verdad de lo publicado, no borradores
 ROADMAP/                       ← 3 roadmaps de lanzamiento (ChatGPT/Claude/Gemini) — PENDIENTE consolidar en ESTRATEGIA.md
 Redes_Sociales/                ← Assets por formato (Branding_Marca, Historias_Stories, Posts_Feed)
 lista_contenido.md             ← Ideas de contenido visual + prompts de generación de imágenes
