@@ -10,17 +10,22 @@
 
 | Evento | Comisión |
 |---|---|
-| Primera venta de un cliente referido (STANDARD, PRO o PREMIUM) | **50%** del valor pagado por el cliente |
-| Segunda re-compra del mismo cliente en adelante (renovaciones/re-consumos posteriores) | **25%** del valor pagado, en cada re-consumo, sin límite de tiempo mientras el cliente siga activo bajo ese embajador |
+| Primera venta de un cliente referido a un plan (STANDARD, PRO o PREMIUM) | **50%** del valor pagado por el cliente |
+| Upgrade del mismo cliente a un plan superior (ej. STANDARD→PRO, PRO→PREMIUM) — **cuenta como primera venta de ESE plan** | **50%** del valor pagado en el upgrade |
+| Renovación del cliente en el **mismo plan** que ya tiene, en adelante | **25%** del valor pagado, en cada renovación, sin límite de tiempo mientras el cliente siga activo bajo ese embajador |
 
-**Por qué esta estructura y no 50% recurrente plano:** el 50% recompensa lo más caro de reemplazar — la adquisición de un cliente nuevo. El 25% en adelante sigue premiando la retención sin comprometer el margen indefinidamente al mismo nivel que la venta inicial. Un embajador que trae un cliente que se queda años sigue ganando, pero la casa recupera más margen a partir del segundo ciclo.
+**Decisión oficial (2026-07-16):** un upgrade a un plan superior se paga al **50%** (como si fuera una venta nueva), no al 25%. Solo las renovaciones del **mismo** plan que el cliente ya tiene pagan 25%. Esto resuelve la ambigüedad que existía en la sección 2 (versión anterior) entre "renovación" y "upgrade" — ya no se tratan igual.
+
+**Ejemplo:** un cliente compra STANDARD (50%), renueva STANDARD una vez (25%), luego hace upgrade a PRO (50% del precio de PRO — no 25%), y después renueva PRO (25% del precio de PRO). El embajador cobra 50% cada vez que el cliente entra a un plan nuevo para él, y 25% en cada ciclo que se queda en el plan en el que ya está.
+
+**Por qué esta estructura y no 50% recurrente plano:** el 50% recompensa lo más caro de reemplazar — la adquisición de un cliente nuevo (o de un cliente que decide gastar más). El 25% en las renovaciones del mismo plan sigue premiando la retención sin comprometer el margen indefinidamente al mismo nivel que una venta/upgrade. Un embajador que trae un cliente que se queda años y además hace upgrade sigue ganando en cada punto de esos, pero la casa recupera más margen en los ciclos de renovación simple.
 
 ---
 
-## 2. Supuesto pendiente de confirmar con el usuario
+## 2. Pendiente — solo queda por confirmar
 
-- **Qué cuenta como "re-consumo":** se asume que es cualquier nueva compra del mismo cliente después de la primera (renovación del mismo plan o upgrade a un plan superior). Si el negocio quiere tratar un *upgrade* de plan de forma distinta a una *renovación* del mismo plan, hay que definirlo aquí antes de comunicarlo a los embajadores.
-- **Segunda compra vs. "en adelante":** se interpreta que el 25% aplica desde la segunda compra **y todas las siguientes** (no solo la segunda). Confirmar si es la lectura correcta.
+- **Segunda compra vs. "en adelante":** se interpreta que el 25% aplica desde la segunda renovación del mismo plan **y todas las siguientes** (no solo la segunda). Confirmar si es la lectura correcta.
+- La regla de upgrade ya está resuelta (ver sección 1) — el punto que quedaba pendiente en la versión anterior de este documento ("¿upgrade cuenta igual que renovación?") queda cerrado: **no**, cuenta como venta nueva al 50%.
 
 ---
 

@@ -31,5 +31,5 @@ Hotmart paga en fiat (retiro con $1 USD de fee). Para convertir a cripto: retiro
 
 ## 4. Pendiente de verificar antes de operar el programa de embajadores
 
-- Confirmar en el panel real de Hotmart si la comisión escalonada (50% primera venta / 25% re-consumo) es configurable nativamente o si hay que resolverlo con lógica externa.
+- Confirmar en el panel real de Hotmart si la comisión escalonada (50% primera venta o upgrade de plan / 25% re-consumo del mismo plan — ver `../Embajadores/ambassador_program.md` sección 1) es configurable nativamente o si hay que resolverlo con lógica externa. La regla de "50% también en upgrades" hace más improbable que el afiliado nativo de Hotmart lo soporte solo (suele ser % fijo por venta) — la lógica ya está resuelta externamente en `../Infraestructura/base_datos_sheets.md` (columna `Comision_Embajador_USD`).
 - Automatización de entrega: Hotmart no integra nativamente con invite-only de TradingView — requiere Webhook (evento "compra aprobada") → Make → invitación en TradingView + alta en WhatsApp. Tarea técnica para `/ejecutor`, no bloqueante para documentar la decisión.

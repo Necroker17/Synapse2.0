@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Synapse — Simulador de Escenarios</title>
+<style>
+  :root {
+    --bg: #F7F4EC;
+    --surface: #FFFFFF;
+    --surface-2: #EFEAE0;
+    --text: #1B1D22;
+    --text-muted: #5B5F6B;
+    --border: #E2DDD0;
+    --accent: #A97A34;
+    --accent-ink: #FFFFFF;
+    --good: #3F7A57;
+    --good-bg: #E7F0EA;
+    --critical: #A24A37;
+    --critical-bg: #F5E7E3;
+    --pending: #3D5F82;
+    --pending-bg: #E7EDF3;
+    --shadow: 0 1px 2px rgba(27,29,34,0.06), 0 4px 16px rgba(27,29,34,0.06);
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #10131A;
+      --surface: #171B24;
+      --surface-2: #1E232F;
+      --text: #E8E6DE;
+      --text-muted: #9AA1AE;
+      --border: #2A2F3B;
+      --accent: #C79A4B;
+      --accent-ink: #1B1300;
+      --good: #6FBB8C;
+      --good-bg: #17281F;
+      --critical: #D98572;
+      --critical-bg: #2B1B17;
+      --pending: #7FA8CE;
+      --pending-bg: #17222D;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #10131A;
+    --surface: #171B24;
+    --surface-2: #1E232F;
+    --text: #E8E6DE;
+    --text-muted: #9AA1AE;
+    --border: #2A2F3B;
+    --accent: #C79A4B;
+    --accent-ink: #1B1300;
+    --good: #6FBB8C;
+    --good-bg: #17281F;
+    --critical: #D98572;
+    --critical-bg: #2B1B17;
+    --pending: #7FA8CE;
+    --pending-bg: #17222D;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    color-scheme: dark;
+  }
+
+  :root[data-theme="light"] {
+    --bg: #F7F4EC;
+    --surface: #FFFFFF;
+    --surface-2: #EFEAE0;
+    --text: #1B1D22;
+    --text-muted: #5B5F6B;
+    --border: #E2DDD0;
+    --accent: #A97A34;
+    --accent-ink: #FFFFFF;
+    --good: #3F7A57;
+    --good-bg: #E7F0EA;
+    --critical: #A24A37;
+    --critical-bg: #F5E7E3;
+    --pending: #3D5F82;
+    --pending-bg: #E7EDF3;
+    --shadow: 0 1px 2px rgba(27,29,34,0.06), 0 4px 16px rgba(27,29,34,0.06);
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.45;
+  }
+
+  h1, h2, h3 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    text-wrap: balance;
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  .mono {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .topbar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .brand .mark {
+    font-family: "Iowan Old Style", Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .brand h1 {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  .theme-toggle {
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    padding: 7px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .theme-toggle:hover { color: var(--text); border-color: var(--accent); }
+  .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 0;
+    align-items: start;
+  }
+
+  @media (max-width: 940px) {
+    .layout { grid-template-columns: 1fr; }
+  }
+
+  .controls {
+    padding: 24px 22px 60px;
+    border-right: 1px solid var(--border);
+    background: var(--surface);
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  @media (max-width: 940px) {
+    .controls { position: static; max-height: none; border-right: none; border-bottom: 1px solid var(--border); }
+  }
+
+  .control-group {
+    margin-bottom: 30px;
+  }
+
+  .control-group > .group-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .field {
+    margin-bottom: 18px;
+  }
+
+  .field-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+
+  .field-head label {
+    font-size: 0.85rem;
+    color: var(--text);
+  }
+
+  .field-head .value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .field .hint {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--border);
+    outline: none;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    border: 2px solid var(--surface);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    border: 2px solid var(--surface);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+  input[type="range"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+  .segmented {
+    display: flex;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .segmented button {
+    flex: 1;
+    padding: 8px 6px;
+    background: var(--surface);
+    color: var(--text-muted);
+    border: none;
+    font-size: 0.78rem;
+    cursor: pointer;
+    font-family: inherit;
+    border-right: 1px solid var(--border);
+  }
+  .segmented button:last-child { border-right: none; }
+  .segmented button.active {
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 600;
+  }
+  .segmented button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+  .number-input {
+    width: 84px;
+    padding: 5px 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface-2);
+    color: var(--text);
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.82rem;
+    text-align: right;
+  }
+  .number-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  .pending-tag {
+    display: inline-block;
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--pending);
+    background: var(--pending-bg);
+    padding: 2px 7px;
+    border-radius: 999px;
+    margin-left: 6px;
+    font-weight: 600;
+  }
+
+  .main {
+    padding: 28px 32px 80px;
+  }
+
+  .section-title {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin: 0 0 14px;
+  }
+
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 34px;
+  }
+  @media (max-width: 760px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } }
+
+  .kpi {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 18px 16px;
+    box-shadow: var(--shadow);
+  }
+
+  .kpi .label {
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .kpi .figure {
+    font-size: 1.55rem;
+    font-weight: 700;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    letter-spacing: -0.01em;
+  }
+
+  .kpi .sub {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  .kpi.accentframe { border-color: var(--accent); }
+
+  section.panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 26px;
+    box-shadow: var(--shadow);
+  }
+
+  .panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+  .panel-head h2 { font-size: 1.05rem; }
+  .panel-head .caption { font-size: 0.76rem; color: var(--text-muted); }
+
+  .chart-wrap {
+    margin-top: 18px;
+  }
+
+  .bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 150px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+  }
+
+  .bar-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    position: relative;
+  }
+
+  .bar {
+    width: 100%;
+    max-width: 26px;
+    border-radius: 3px 3px 0 0;
+    background: var(--accent);
+    transition: height 0.15s ease;
+  }
+  .bar.negative { background: var(--critical); }
+
+  .bar-col:hover .bar-tooltip { opacity: 1; transform: translateY(0); }
+
+  .bar-tooltip {
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 6px;
+    background: var(--text);
+    color: var(--bg);
+    font-size: 0.68rem;
+    padding: 4px 7px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(3px);
+    transition: opacity 0.12s ease, transform 0.12s ease;
+    pointer-events: none;
+    z-index: 2;
+    font-family: ui-monospace, monospace;
+  }
+
+  .bar-labels {
+    display: flex;
+    gap: 5px;
+    margin-top: 6px;
+  }
+  .bar-labels span {
+    flex: 1;
+    text-align: center;
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    max-width: 26px;
+  }
+
+  .split-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+  @media (max-width: 760px) { .split-row { grid-template-columns: repeat(2, 1fr); } }
+
+  .split-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .split-card .who {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .split-card .who .pct { color: var(--accent); font-weight: 600; }
+  .split-card .amount {
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  .ambassador-strip {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+  .ambassador-stat { min-width: 140px; }
+  .ambassador-stat .label { font-size: 0.74rem; color: var(--text-muted); display:block; margin-bottom: 4px; }
+  .ambassador-stat .figure { font-size: 1.2rem; font-weight: 700; font-family: ui-monospace, monospace; }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin-top: 16px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.82rem;
+    min-width: 620px;
+  }
+
+  thead th {
+    text-align: right;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 10px 14px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+  }
+  thead th:first-child { text-align: left; }
+
+  tbody td {
+    text-align: right;
+    padding: 8px 14px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    border-bottom: 1px solid var(--border);
+    font-variant-numeric: tabular-nums;
+  }
+  tbody td:first-child {
+    text-align: left;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text-muted);
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(3n) td { background: color-mix(in srgb, var(--surface-2) 45%, transparent); }
+
+  .neg { color: var(--critical); }
+  .pos { color: var(--good); }
+
+  .footnote {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    max-width: 66ch;
+    margin-top: 6px;
+  }
+
+  .disclaimer {
+    margin: 40px 0 0;
+    padding: 16px 20px;
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    max-width: 78ch;
+  }
+  .disclaimer strong { color: var(--text); }
+
+  a { color: var(--accent); }
+
+  ::selection { background: var(--accent); color: var(--accent-ink); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <span class="mark">S</span>
+    <h1>Simulador de escenarios — Synapse AI Scanner</h1>
+  </div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema">Tema: sistema</button>
+</div>
+
+<div class="layout">
+  <aside class="controls">
+
+    <div class="control-group">
+      <span class="group-label">Producto y precio</span>
+
+      <div class="field">
+        <div class="field-head"><label for="planSelect">Plan</label></div>
+        <div class="segmented" id="planSelect" role="group" aria-label="Plan">
+          <button data-plan="STANDARD" class="active">STANDARD</button>
+          <button data-plan="PRO">PRO</button>
+          <button data-plan="PREMIUM">PREMIUM</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="field-head"><label for="priceSelect">Precio</label></div>
+        <div class="segmented" id="priceSelect" role="group" aria-label="Precio">
+          <button data-price="launch" class="active">Lanzamiento</button>
+          <button data-price="official">Oficial</button>
+        </div>
+        <div class="hint" id="planDetail">$197 · duración 3 meses</div>
+      </div>
+
+      <div class="field">
+        <div class="field-head"><label for="horizon">Horizonte</label><span class="value" id="horizonVal">12 meses</span></div>
+        <input type="range" id="horizon" min="3" max="24" step="1" value="12" />
+      </div>
+    </div>
+
+    <div class="control-group">
+      <span class="group-label">Embajadores y retención</span>
+
+      <div class="field">
+        <div class="field-head"><label for="numAmb">Embajadores activos</label><span class="value" id="numAmbVal">10</span></div>
+        <input type="range" id="numAmb" min="1" max="40" step="1" value="10" />
+      </div>
+
+      <div class="field">
+        <div class="field-head"><label for="salesPerAmb">Ventas nuevas / embajador / mes</label><span class="value" id="salesPerAmbVal">10</span></div>
+        <input type="range" id="salesPerAmb" min="1" max="30" step="1" value="10" />
+      </div>
+
+      <div class="field">
+        <div class="field-head"><label for="retention">Retención trimestral</label><span class="value" id="retentionVal">40%</span></div>
+        <input type="range" id="retention" min="0" max="80" step="1" value="40" />
+        <div class="hint">% de clientes que reconsume cada 3 meses, compuesto (hipotético, no medido).</div>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <span class="group-label">Costos operativos</span>
+
+      <div class="field">
+        <div class="field-head"><label for="feePct">Fee pasarela de pago (Hotmart)</label><span class="value" id="feePctVal">9.9%</span></div>
+        <input type="range" id="feePct" min="0" max="15" step="0.1" value="9.9" />
+      </div>
+
+      <div class="field">
+        <div class="field-head"><label for="feeFlat">Fee fijo por transacción</label></div>
+        <input type="number" class="number-input" id="feeFlat" value="0.50" step="0.05" min="0" />
+      </div>
+
+      <div class="field">
+        <div class="field-head"><label for="fixedCost">Costo fijo mensual negocio</label></div>
+        <input type="number" class="number-input" id="fixedCost" value="140" step="5" min="0" />
+        <div class="hint">TradingView + Make + Manychat + Claude</div>
+      </div>
+
+      <div class="field">
+        <div class="field-head">
+          <label for="supportCost">Costo de soporte / cliente / mes</label>
+        </div>
+        <input type="number" class="number-input" id="supportCost" value="0" step="0.5" min="0" />
+        <div class="hint">Sin confirmar todavía<span class="pending-tag">pendiente</span> — pon tu propio estimado para ver el impacto.</div>
+      </div>
+    </div>
+
+  </aside>
+
+  <main class="main">
+
+    <div class="kpi-row">
+      <div class="kpi accentframe">
+        <span class="label">Facturación bruta del período</span>
+        <span class="figure mono" id="kpiRevenue">$0</span>
+        <span class="sub" id="kpiRevenueSub">—</span>
+      </div>
+      <div class="kpi">
+        <span class="label">Comisión pagada a embajadores</span>
+        <span class="figure mono" id="kpiCommission">$0</span>
+        <span class="sub">50% primera venta · 25% re-consumo</span>
+      </div>
+      <div class="kpi">
+        <span class="label">Margen neto del negocio</span>
+        <span class="figure mono" id="kpiMargin">$0</span>
+        <span class="sub" id="kpiMarginSub">—</span>
+      </div>
+      <div class="kpi">
+        <span class="label">Comisión de UN embajador</span>
+        <span class="figure mono" id="kpiAmbassador">$0</span>
+        <span class="sub" id="kpiAmbassadorSub">—</span>
+      </div>
+    </div>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Margen neto mes a mes</h2>
+        <span class="caption">Barras rojas = mes con margen negativo</span>
+      </div>
+      <div class="chart-wrap">
+        <div class="bars" id="chartBars"></div>
+        <div class="bar-labels" id="chartLabels"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Reparto de la ganancia libre</h2>
+        <span class="caption">Gustavo 25% · Reserva 15% · Fundador 30% · Meli 30%</span>
+      </div>
+      <div class="split-row" id="splitRow"></div>
+      <p class="footnote">Reparto vigente según <code>profit_split.md</code>. Vehículo legal (equity vs. revenue share) aún sin formalizar.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Desglose mensual</h2>
+        <span class="caption" id="tableCaption">—</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Mes</th>
+              <th>Nuevos</th>
+              <th>Reconsumos</th>
+              <th>Facturación</th>
+              <th>Comisión</th>
+              <th>Margen neto</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="disclaimer">
+      <strong>Esto es un simulador de planeación, no un compromiso de resultados.</strong>
+      Las cifras dependen de supuestos que tú controlas arriba (retención, volumen, costos) —
+      varios de ellos (retención, costo de soporte) no están medidos todavía con datos reales.
+      Precios, comisiones y fee de Hotmart vienen de <code>Pricing_y_Pagos/</code> y
+      <code>Finanzas/financial_model.md</code>; el reparto de socios viene de
+      <code>Finanzas/profit_split.md</code>.
+    </div>
+
+  </main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var PLANS = {
+    STANDARD: { launch: 197, official: 249, duration: 3 },
+    PRO:      { launch: 299, official: 397, duration: 6 },
+    PREMIUM:  { launch: 699, official: 799, duration: 12 }
+  };
+
+  var state = {
+    plan: "STANDARD",
+    priceMode: "launch",
+    horizon: 12,
+    numAmb: 10,
+    salesPerAmb: 10,
+    retention: 40,
+    feePct: 9.9,
+    feeFlat: 0.50,
+    fixedCost: 140,
+    supportCost: 0
+  };
+
+  function fmtMoney(n) {
+    var neg = n < 0;
+    var v = Math.abs(n);
+    var s = "$" + v.toLocaleString("en-US", { maximumFractionDigits: 0 });
+    return neg ? "−" + s : s;
+  }
+
+  function marginPerSale(price, tasaComision, duration, feePct, feeFlat, supportMonthly) {
+    var ingresoNeto = price * (1 - feePct / 100) - feeFlat;
+    var comision = price * tasaComision;
+    var costoOperativo = supportMonthly * duration;
+    return ingresoNeto - comision - costoOperativo;
+  }
+
+  function compute() {
+    var plan = PLANS[state.plan];
+    var price = plan[state.priceMode];
+    var duration = plan.duration;
+    var r = state.retention / 100;
+    var months = state.horizon;
+    var newPerMonth = state.numAmb * state.salesPerAmb;
+
+    var rows = [];
+    var totalRevenue = 0, totalCommission = 0, totalMarginNeto = 0;
+
+    for (var m = 1; m <= months; m++) {
+      var renewals = 0;
+      for (var g = 1; m - g * duration >= 1; g++) {
+        renewals += newPerMonth * Math.pow(r, g);
+      }
+      var newClients = newPerMonth;
+      var revenue = (newClients + renewals) * price;
+      var commission = newClients * price * 0.5 + renewals * price * 0.25;
+      var marginBruto = newClients * marginPerSale(price, 0.5, duration, state.feePct, state.feeFlat, state.supportCost)
+                       + renewals * marginPerSale(price, 0.25, duration, state.feePct, state.feeFlat, state.supportCost);
+      var marginNeto = marginBruto - state.fixedCost;
+
+      rows.push({ m: m, newClients: newClients, renewals: renewals, revenue: revenue, commission: commission, marginNeto: marginNeto });
+      totalRevenue += revenue;
+      totalCommission += commission;
+      totalMarginNeto += marginNeto;
+    }
+
+    // Un embajador individual (su propio ritmo, misma retencion/plan)
+    var ambNewPerMonth = state.salesPerAmb;
+    var ambTotalCommission = 0;
+    for (var m2 = 1; m2 <= months; m2++) {
+      var ambRenewals = 0;
+      for (var g2 = 1; m2 - g2 * duration >= 1; g2++) {
+        ambRenewals += ambNewPerMonth * Math.pow(r, g2);
+      }
+      ambTotalCommission += ambNewPerMonth * price * 0.5 + ambRenewals * price * 0.25;
+    }
+
+    return {
+      rows: rows,
+      totalRevenue: totalRevenue,
+      totalCommission: totalCommission,
+      totalMarginNeto: totalMarginNeto,
+      ambTotalCommission: ambTotalCommission,
+      price: price,
+      duration: duration
+    };
+  }
+
+  function render() {
+    var r = compute();
+
+    document.getElementById("kpiRevenue").textContent = fmtMoney(r.totalRevenue);
+    document.getElementById("kpiRevenueSub").textContent = state.horizon + " meses · " + state.numAmb + " embajadores";
+    document.getElementById("kpiCommission").textContent = fmtMoney(r.totalCommission);
+    document.getElementById("kpiMargin").textContent = fmtMoney(r.totalMarginNeto);
+    document.getElementById("kpiMargin").parentElement.querySelector(".figure").style.color =
+      r.totalMarginNeto < 0 ? "var(--critical)" : "var(--text)";
+    document.getElementById("kpiMarginSub").textContent = "antes de costo de soporte si sigue en $0";
+    document.getElementById("kpiAmbassador").textContent = fmtMoney(r.ambTotalCommission);
+    document.getElementById("kpiAmbassadorSub").textContent = state.salesPerAmb + " ventas/mes · " + state.horizon + " meses";
+
+    // chart
+    var bars = document.getElementById("chartBars");
+    var labels = document.getElementById("chartLabels");
+    bars.innerHTML = "";
+    labels.innerHTML = "";
+    var maxAbs = Math.max.apply(null, r.rows.map(function (row) { return Math.abs(row.marginNeto); }).concat([1]));
+    r.rows.forEach(function (row) {
+      var col = document.createElement("div");
+      col.className = "bar-col";
+      var bar = document.createElement("div");
+      bar.className = "bar" + (row.marginNeto < 0 ? " negative" : "");
+      var h = Math.max(2, Math.round((Math.abs(row.marginNeto) / maxAbs) * 140));
+      bar.style.height = h + "px";
+      var tip = document.createElement("div");
+      tip.className = "bar-tooltip";
+      tip.textContent = "Mes " + row.m + ": " + fmtMoney(row.marginNeto);
+      col.appendChild(tip);
+      col.appendChild(bar);
+      bars.appendChild(col);
+
+      var lab = document.createElement("span");
+      lab.textContent = row.m;
+      labels.appendChild(lab);
+    });
+
+    // split
+    var splitRow = document.getElementById("splitRow");
+    var splits = [
+      { who: "Gustavo", pct: 0.25 },
+      { who: "Reserva", pct: 0.15 },
+      { who: "Fundador", pct: 0.30 },
+      { who: "Meli", pct: 0.30 }
+    ];
+    splitRow.innerHTML = "";
+    splits.forEach(function (s) {
+      var card = document.createElement("div");
+      card.className = "split-card";
+      card.innerHTML =
+        '<div class="who"><span>' + s.who + '</span><span class="pct">' + Math.round(s.pct * 100) + '%</span></div>' +
+        '<div class="amount mono">' + fmtMoney(r.totalMarginNeto * s.pct) + "</div>";
+      splitRow.appendChild(card);
+    });
+
+    // table
+    var tbody = document.getElementById("tableBody");
+    tbody.innerHTML = "";
+    r.rows.forEach(function (row) {
+      var tr = document.createElement("tr");
+      tr.innerHTML =
+        "<td>Mes " + row.m + "</td>" +
+        "<td>" + row.newClients.toFixed(1) + "</td>" +
+        "<td>" + row.renewals.toFixed(1) + "</td>" +
+        "<td>" + fmtMoney(row.revenue) + "</td>" +
+        "<td>" + fmtMoney(row.commission) + "</td>" +
+        '<td class="' + (row.marginNeto < 0 ? "neg" : "pos") + '">' + fmtMoney(row.marginNeto) + "</td>";
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById("tableCaption").textContent =
+      "Plan " + state.plan + " · $" + r.price + " · duración " + r.duration + " meses";
+  }
+
+  // --- wiring ---
+
+  document.querySelectorAll("#planSelect button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll("#planSelect button").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      state.plan = btn.getAttribute("data-plan");
+      updatePlanDetail();
+      render();
+    });
+  });
+
+  document.querySelectorAll("#priceSelect button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll("#priceSelect button").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      state.priceMode = btn.getAttribute("data-price");
+      updatePlanDetail();
+      render();
+    });
+  });
+
+  function updatePlanDetail() {
+    var plan = PLANS[state.plan];
+    var price = plan[state.priceMode];
+    document.getElementById("planDetail").textContent = "$" + price + " · duración " + plan.duration + " meses";
+  }
+
+  function bindRange(id, valEl, fmt, key) {
+    var el = document.getElementById(id);
+    el.addEventListener("input", function () {
+      state[key] = parseFloat(el.value);
+      if (valEl) document.getElementById(valEl).textContent = fmt(state[key]);
+      render();
+    });
+  }
+
+  bindRange("horizon", "horizonVal", function (v) { return v + " meses"; }, "horizon");
+  bindRange("numAmb", "numAmbVal", function (v) { return v; }, "numAmb");
+  bindRange("salesPerAmb", "salesPerAmbVal", function (v) { return v; }, "salesPerAmb");
+  bindRange("retention", "retentionVal", function (v) { return v + "%"; }, "retention");
+  bindRange("feePct", "feePctVal", function (v) { return v.toFixed(1) + "%"; }, "feePct");
+
+  ["feeFlat", "fixedCost", "supportCost"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", function (e) {
+      state[id] = parseFloat(e.target.value) || 0;
+      render();
+    });
+  });
+
+  // theme toggle: system -> dark -> light -> system
+  var themeBtn = document.getElementById("themeToggle");
+  var themeState = "system";
+  themeBtn.addEventListener("click", function () {
+    if (themeState === "system") { themeState = "dark"; }
+    else if (themeState === "dark") { themeState = "light"; }
+    else { themeState = "system"; }
+
+    if (themeState === "system") {
+      document.documentElement.removeAttribute("data-theme");
+      themeBtn.textContent = "Tema: sistema";
+    } else {
+      document.documentElement.setAttribute("data-theme", themeState);
+      themeBtn.textContent = "Tema: " + (themeState === "dark" ? "oscuro" : "claro");
+    }
+  });
+
+  updatePlanDetail();
+  render();
+})();
+</script>
+
+</body>
+</html>

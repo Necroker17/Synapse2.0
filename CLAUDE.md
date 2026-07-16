@@ -18,9 +18,12 @@ Landing_SynapseAI/             ← Landing v2 ACTIVA, estilo TradingView institu
 business_plan/                 ← Modelo de negocio, categorizado en subcarpetas:
   Finanzas/                     ← financial_model.md, profit_split.md, reporte_proyeccion_2026.md, synapse_business_plan.xlsx + build_business_plan_xlsx.py, google_sheets_prompt.md
   Embajadores/                  ← ambassador_program.md (comisiones), ambassador_earnings_projection.md, ambassador_scenarios.md
+    Presentacion/                ← index.html: presentación interactiva de reclutamiento del programa (marca Synapse, calculadora de metas por embajador), un solo archivo autocontenido
   Pricing_y_Pagos/               ← pricing_strategy.md, payment_processing.md
   Crecimiento/                  ← product_growth_tasks.md (experimentos de retención)
   Hotmart/                      ← Montaje del producto en Hotmart — su mapa: business_plan/Hotmart/README.md
+  Dashboard/                    ← index.html: simulador interactivo de escenarios (financiero + embajadores) para uso interno, un solo archivo autocontenido (HTML/CSS/JS vainilla, sin dependencias externas)
+  Infraestructura/               ← Arquitectura técnica: base de datos en Sheets, flujos de automatización (Make/Manychat), procesos manuales de soporte — su mapa: business_plan/Infraestructura/README.md
 Formularios/                   ← Formularios reales ya construidos y en vivo (Google Forms) — fuente de verdad de lo publicado, no borradores
 ROADMAP/                       ← 3 roadmaps de lanzamiento (ChatGPT/Claude/Gemini) — PENDIENTE consolidar en ESTRATEGIA.md
 Redes_Sociales/                ← Assets por formato (Branding_Marca, Historias_Stories, Posts_Feed)
