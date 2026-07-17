@@ -143,4 +143,4 @@ Estructura de la skill de carruseles: portada con dicotomía extrema → agitaci
 3. **Generar los 6 slides de cada carrusel** (§3) con el mismo bloque de estilo — tipografía como protagonista, sin necesidad de gráfico de fondo en cada slide (alternar slide con chart borroso / slide solo tipografía para dar ritmo visual).
 4. **Verificar la regla de fase** antes de publicar cualquier pieza: cero menciones de Synapse, cero CTA de trial — todos los CTA son comentar/guardar/compartir.
 5. **Programar por día**, siguiendo el orden de la miniserie (cada día cierra con la pregunta que abre el siguiente, `synapse_fase1_historias_guion.md`).
-6. **Los emails, WhatsApp y lives de cada día** (temas ya definidos en el mensaje del Blueprint) quedan pendientes de guion — este documento cubre historias y carruseles únicamente.
+6. **Emails, WhatsApp y lives** ya están guionados en `synapse_fase1_emails_whatsapp_lives.md` — con esto, la Fase 1 queda completamente guionada en sus 6 formatos.
