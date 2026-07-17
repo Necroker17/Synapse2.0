@@ -6,10 +6,10 @@ Este documento es la base de conocimiento oficial y manual del usuario de **Syna
 
 ## 🧠 1. Introducción y Arquitectura Neuronal de la IA
 
-**Synapse AI Scanner v3.0** no es un indicador técnico tradicional; es un **Asistente Cognitivo de Trading** entrenado específicamente para analizar la microestructura de volumen y momentum del Oro y la Plata. El cerebro del sistema evalúa múltiples capas de datos para identificar anomalías institucionales durante la sesión de mayor volatilidad mundial (Apertura de Nueva York).
+**Synapse AI Scanner v3.0** no es un indicador técnico tradicional; es un **Asistente Cognitivo de Trading** entrenado específicamente para analizar la microestructura de volumen y momentum del Oro y la Plata. El cerebro del sistema evalúa múltiples capas de datos para identificar anomalías institucionales durante las dos sesiones de mayor volatilidad institucional: la apertura de Nueva York y la sesión de Asia.
 
 ### El Flujo de Toma de Decisiones de la IA:
-*   **Filtro de Conciencia Temporal:** El asistente inteligente enfoca toda su potencia de procesamiento en la ventana de **7:00 AM a 11:00 AM (Hora Colombia / UTC-5)**. Fuera de esta zona horaria, la IA entra en modo de reposo analítico para evitar falsos positivos.
+*   **Filtro de Conciencia Temporal:** El asistente inteligente enfoca toda su potencia de procesamiento en **dos ventanas horarias** (Hora Colombia / UTC-5): **sesión Nueva York, de 7:00 AM a 11:00 AM**, y **sesión Asia, de 6:00 PM a 10:00 PM**. Fuera de esas dos ventanas, la IA entra en modo de reposo analítico para evitar falsos positivos. Cada sesión corre el mismo análisis de forma independiente — si el usuario no alcanzó a tomar la señal de una sesión, tiene una segunda oportunidad en la otra, el mismo día.
 *   **Capa Direccional (Tendencia Institucional):** La IA evalúa la correlación de precios en base a una media móvil de alta velocidad para discernir la dirección del flujo de órdenes institucionales, evitando operar en contra de la tendencia dominante.
 *   **Filtro de Momentum y Volatilidad (Cuerpo de Vela/ATR):** El motor inteligente mide el tamaño y volumen relativo de las velas engulfing comparándolas con el rango real promedio (ATR). La IA solo aprueba señales cuando detecta una inyección genuina de capital institucional.
 *   **Proyección de Objetivos Simétricos:** Tras autorizar una entrada, la IA proyecta en milisegundos un Stop Loss de protección técnica y dos niveles de Take Profit (TP1/TP2) adaptados a la volatilidad instantánea del activo.
@@ -44,6 +44,7 @@ Este panel representa el registro histórico de efectividad del asistente inteli
 *   **Tasa de Acierto en TP2:** Muestra el porcentaje de precisión de la IA al buscar extensiones máximas de tendencia.
 *   **Factor de Beneficio (Profit Factor):** El coeficiente de rendimiento matemático de la IA.
 *   **Retorno Neto (Net Pips / % Growth):** Las ganancias consolidadas estimadas que la IA ha generado en pips y el crecimiento porcentual estimado del capital inicial.
+*   **Desglose por Sesión:** Cada señal queda etiquetada como `NY` o `ASIA` según la ventana horaria en la que se generó, y el panel permite ver la tasa de acierto de cada sesión por separado.
 
 ### B. Consola de Ejecución en Vivo de la IA (Esquina Inferior Derecha)
 Tu puente operativo directo con el asistente de IA para abrir operaciones en tu cuenta:
