@@ -16,45 +16,47 @@
 | 2 | El mismo gráfico mostrando que luego alcanzó el TP original | "¿Y si el mercado nunca te sacó... sino que tú cambiaste el plan?" | — |
 | 3 | Fondo limpio con una pregunta | "¿Qué crees que hace perder más dinero?\nA) El mercado\nB) Mis decisiones" | Encuesta |
 
-## Día 2 — Mover el Stop Loss cuesta más que una mala entrada
+## Día 2 — Mover el Stop Loss
 
 *Asset: 1 — Autosabotaje. Cierra con: "¿Por qué seguimos moviendo el Stop si sabemos que está mal?"*
 
-| # | Foto | Texto | Sticker |
-|---|---|---|---|
-| 1 | Gráfico con el SL original marcado, el precio acercándose | "Viste que el precio se acercaba a tu Stop Loss... y lo moviste 'solo un poco'." | — |
-| 2 | Mismo gráfico: el precio siguió cayendo y activó el SL movido, pérdida mayor a la planeada | "Ese 'solo un poco' costó el doble de lo que habías planeado perder." | — |
-| 3 | Fondo limpio con una pregunta | "¿Por qué seguimos moviendo el Stop... si sabemos que está mal?" | Encuesta: "Sí, lo he hecho / No, nunca" |
+| # | Texto | Sticker |
+|---|---|---|
+| 1 | "Mover el Stop parece protegerte..." | — |
+| 2 | "Pero muchas veces solo retrasa aceptar una pérdida." | — |
+| 3 | "¿Has movido un Stop esta semana?" | Encuesta |
 
-## Día 3 — Cerrar antes también es perder dinero
+## Día 3 — Cerrar antes de tiempo
 
 *Asset: 10 — Romper Topes Mentales. Cierra con: "¿Y si también existe el miedo a ganar?"*
 
-| # | Foto | Texto | Sticker |
-|---|---|---|---|
-| 1 | Gráfico con una operación en ganancia, camino al TP | "Ibas ganando... y cerraste antes de llegar a tu objetivo." | — |
-| 2 | Mismo gráfico: el precio siguió subiendo hasta el TP original después de que cerraste | "El precio llegó igual. Solo que ya no estabas ahí para cobrarlo." | — |
-| 3 | Fondo limpio con una pregunta | "¿Y si el miedo a perder no es tu único enemigo... y también le tienes miedo a ganar en grande?" | Encuesta: "Nunca me pasó / Me pasa seguido" |
+| # | Texto | Sticker |
+|---|---|---|
+| 1 | "¿Alguna vez cerraste una operación ganadora demasiado pronto?" | — |
+| 2 | "Minutos después llegó exactamente al Take Profit... sin ti." | — |
+| 3 | "¿Qué sientes cuando una operación empieza a ganar?" | Encuesta |
 
-## Día 4 — No necesitas otro indicador
+## Día 4 — La falsa solución
 
 *Asset: 3 — La falsa solución. Cierra con: "¿Y si comprar otro indicador no cambia nada?"*
 
-| # | Foto | Texto | Sticker |
-|---|---|---|---|
-| 1 | Collage de íconos de indicadores genéricos (RSI, MACD, Bandas de Bollinger) amontonados | "¿Cuántos indicadores has comprado ya, buscando 'el bueno'?" | — |
-| 2 | Mismo collage, cada ícono con un check tachado | "Y aun así, seguiste tomando las mismas decisiones en el peor momento." | — |
-| 3 | Fondo limpio con una pregunta | "¿Y si el problema nunca fue encontrar la entrada... sino lo que haces después de encontrarla?" | Slider: "¿Cuántos indicadores has probado?" |
+| # | Texto | Sticker |
+|---|---|---|
+| 1 | "Otro indicador. Otro curso. Otra estrategia." | — |
+| 2 | "¿Y si el problema nunca fue la información?" | — |
+| 3 | "¿Cuántos indicadores has probado?" | Encuesta |
 
-## Día 5 — El verdadero enemigo aparece cuando tienes que decidir
+## Día 5 — El enemigo real
 
 *Asset: 2 — El Enemigo. Cierra la fase (transición a Fase 2) con: "Entonces... ¿qué pasaría si pudieras eliminar el momento en el que te saboteas?"*
 
-| # | Foto | Texto | Sticker |
-|---|---|---|---|
-| 1 | Silueta/mano sobre el teléfono en el momento exacto de decidir, tensión visual | "El mercado no cambia tus reglas. Tú las cambias, justo cuando más importa seguirlas." | — |
-| 2 | Mini-collage resumen de la semana (SL movido, cierre anticipado, otro indicador) | "Esta semana viste 3 formas distintas en las que te saboteas. Ninguna es el mercado." | — |
-| 3 | Fondo limpio, pregunta de cierre de fase | "Entonces... ¿qué pasaría si pudieras eliminar el momento exacto en el que te saboteas?" | — (se deja abierta, sin sticker, para no resolverla — Synapse aparece recién en Fase 4) |
+| # | Texto | Sticker |
+|---|---|---|
+| 1 | "El mercado no cambia tus reglas." | — |
+| 2 | "Tú las cambias cuando aparecen las emociones." | — |
+| 3 | "¿Qué emoción te hace cometer más errores? Miedo / FOMO / Impaciencia / Venganza" | Encuesta |
+
+> **Versión final confirmada por el usuario** (reemplaza el borrador inicial de Días 2-5). El detalle visual completo (foto/estilo) vive ahora en `synapse_fase1_plan_ejecucion.md`, con la especificación de imagen definitiva: fondo oscuro con detalles dorados y blancos, velas japonesas desenfocadas, sin logos.
 
 ---
 
