@@ -15,8 +15,8 @@
 | 3 — Nueva oportunidad | Asset 4 (Nueva oportunidad) |
 | 4 — Descubrimiento | Asset 5 (Synapse) — **bloqueado por la historia de origen** |
 | 5 — Deseo | Asset 6 (Mecanismo), Asset 7 (Prueba), Asset 11 (Simplicidad de ejecución), Asset 12 (Doble oportunidad), Asset 13 (Voces reales), Asset 14 (Comunidad), Asset 16 (vs. la competencia) |
-| 6 — Conversión | Asset 8 (Oferta), Asset 15 (Disciplina mínima viable) |
-| 7 — Cierre | Asset 9 (Urgencia) |
+| 6 — Conversión | Asset 8 (Oferta), Asset 15 (Disciplina mínima viable), Asset 17 (Transformación en 3 semanas) |
+| 7 — Cierre | Asset 9 (Urgencia), Asset 17 (Transformación en 3 semanas) |
 
 ## Ficha estándar
 
@@ -179,6 +179,18 @@ Cada asset responde: Objetivo estratégico · Creencia que destruye · Creencia 
 - **Emoción dominante:** diferenciación / claridad de valor.
 - **⚠️ Usar con cautela:** el argumento de "más confiable" está limitado mientras no exista track record auditado por terceros (misma brecha ya señalada en `synapse_messaging_bible.md` §4) — vender como "más accionable", no como "más confiable".
 - **Genera:** carrusel comparativo, reel "qué te da Synapse que un grupo gratis no te da".
+
+## Asset 17 — Transformación en 3 semanas (trial avanzado)
+
+- **Objetivo estratégico:** convertir al segmento de mayor intención — usuarios con semanas reales de uso que ya vieron impacto — antes de que el trial expire sin decisión.
+- **Creencia que destruye:** "Puedo volver a decidir solo cuando termine el trial, no es tan distinto."
+- **Creencia que instala:** "Volver a decidir solo cuesta justo lo que ya construí estas semanas."
+- **Emoción dominante:** pérdida de lo ganado (loss aversion sobre el progreso propio, no sobre dinero).
+- **Argumentos principales:** contraste antes/después con el propio uso del producto (menos SL movidos, menos cierres por miedo), no con cifras agregadas de rentabilidad.
+- **A diferencia de los assets 1-16:** este es el único que sí nombra a Synapse desde el primer slide — es audiencia caliente, no fría. No usar en Fase 1-3.
+- **⚠️ Reglas duras:** nunca prometer ganancias ni usar win rate/profit factor sin reconciliar (misma dependencia de `synapse_messaging_bible.md` §6); disclaimer de riesgo obligatorio en el caption.
+- **Ya desarrollado:** carrusel completo en `synapse_carrusel_trial_avanzado.md` (skill `carrusel-dicotomico`).
+- **Genera:** carrusel de transformación (ya hecho), WhatsApp de check-in día 13-15 (conecta con `product_growth_tasks.md` Experimento 1), email de oferta de conversión anticipada (Experimento 3), testimonio en historia.
 
 ---
 
