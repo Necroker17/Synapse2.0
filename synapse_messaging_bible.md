@@ -54,6 +54,8 @@ La combinación que ningún competidor mapeado ofrece completa, y que la propia 
 
 **Brecha a cerrar:** los competidores premium en inglés (GoldSignals.io, AltSignals) sí tienen **track record auditado por terceros (tipo Myfxbook)** — algo que Synapse hoy no tiene **[DATO — investigación de mercado, secciones Diferenciales y Garantía]**. Mientras no se cierre esa brecha, el mecanismo único no debe venderse como "más confiable", sino como "más accionable" (más rápido de ejecutar, más barato, en tu idioma).
 
+**Pieza adicional del mecanismo — doble sesión [DATO, confirmado 2026-07-17]:** el indicador corre el mismo filtro en dos ventanas horarias independientes por día — Nueva York (7:00–11:00 a.m.) y Asia (6:00–10:00 p.m.), hora Colombia — cada señal etiquetada `NY`/`ASIA` con win rate propio visible en el panel. Esto conecta directamente con la sección Problema de la investigación: el usuario elige la sesión que le queda según su horario, y si no alcanzó a tomar la señal de una sesión, tiene una segunda oportunidad real el mismo día en la otra. Vale la pena testear este ángulo aparte ("dos oportunidades al día, no una") — no estaba cubierto en la investigación original porque en ese momento la narrativa pública solo hablaba de NY.
+
 ## 5. Creencias
 
 **[PROPUESTA — qué debe creer el prospecto antes de comprar, derivado de la investigación de mercado, secciones Problema, Solución y Objeciones]**
@@ -143,7 +145,7 @@ El espacio en blanco defendible es la combinación completa de fila 1 + fila 4. 
 
 **[PROPUESTA]**
 
-> Synapse AI es un asistente algorítmico para TradingView que opera Oro en M15 durante la sesión de Nueva York. En vez de dejarte decidir en caliente, te manda al WhatsApp la señal completa — entrada, stop loss, dos objetivos y el riesgo exacto en dólares para tu capital — y mueve tu stop a break-even apenas la operación empieza a funcionar. No promete ganancias: te quita la decisión emocional del medio, para que sigas tu propio plan incluso cuando la emoción te dice lo contrario.
+> Synapse AI es un asistente algorítmico para TradingView que opera Oro en M15 durante dos sesiones diarias — Nueva York y Asia — así que si no alcanzaste una señal, todavía tienes la otra el mismo día. En vez de dejarte decidir en caliente, te manda al WhatsApp la señal completa — entrada, stop loss, dos objetivos y el riesgo exacto en dólares para tu capital — y mueve tu stop a break-even apenas la operación empieza a funcionar. No promete ganancias: te quita la decisión emocional del medio, para que sigas tu propio plan incluso cuando la emoción te dice lo contrario.
 
 ## 12. One Liner
 

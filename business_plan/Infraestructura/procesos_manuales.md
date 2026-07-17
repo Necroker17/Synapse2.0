@@ -55,7 +55,7 @@ Un problema frecuente es que el usuario escriba mal su nombre de usuario en Trad
 El soporte durante los 15 días del trial es el motor de conversión más potente del negocio. Meli lidera este frente con el siguiente protocolo:
 
 ### 3.1 Soporte en el Grupo Abierto de WhatsApp
-* **Frecuencia:** Revisión constante durante la sesión de Nueva York (7:00 a 11:00 UTC-5) y 2-3 chequeos rápidos por la tarde.
+* **Frecuencia:** Revisión constante durante las dos sesiones del indicador — Nueva York (7:00 a 11:00 UTC-5) y Asia (6:00 a 10:00 p.m. UTC-5) — con 2-3 chequeos rápidos adicionales fuera de esas ventanas.
 * **Acciones:**
   * Dar la bienvenida a los nuevos integrantes del trial.
   * Publicar capturas de pantalla de operaciones exitosas del día (con el disclaimer de riesgo obligatorio).

@@ -35,7 +35,7 @@ Disciplina mínima viable, sin teoría de psicología — 4 errores que arruinan
 - Cerrar una operación antes de tiempo por miedo → se deja correr, la IA ya calculó el riesgo.
 - Abrir una operación fuera de la señal de la IA (por FOMO) → solo se opera lo que la IA marca.
 - **No respetar la Regla del Stop Diario** → apaga la pantalla después de **1 ganancia en TP1/TP2 o 2 pérdidas seguidas** en el día. No hay una quinta oportunidad ese día.
-- Checklist de 1 minuto antes de cada sesión (7:00 AM): ¿tengo las alertas activas? ¿configuré bien mi capital y riesgo%? Nada más.
+- Checklist de 1 minuto antes de cada sesión (7:00 AM para Nueva York, 6:00 PM para Asia): ¿tengo las alertas activas? ¿configuré bien mi capital y riesgo%? Nada más.
 
 **Nota de cierre del módulo — mentalidad a 100 trades:** no juzgues el sistema por las primeras 5-10 señales. Una racha corta de pérdidas o de aciertos no dice nada por sí sola; la IA se evalúa en el largo plazo, no en la primera semana. (Esta nota es la más importante del módulo para la retención — previene el abandono del trial por una mala racha temprana.)
 

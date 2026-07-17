@@ -19,7 +19,7 @@
 
 ## 3. Qué ofrece exactamente
 
-**Producto base:** indicador/escáner algorítmico de acceso **Invite-Only en TradingView**, exclusivo para **Oro (XAUUSD), temporalidad M15**, sesión de Nueva York (7:00–11:00 a.m. hora Colombia). Entrega señal de entrada, Stop Loss, dos Take Profit (TP1/TP2) y el lotaje calculado según capital y riesgo del trader. (Detalle técnico completo en `indicador_synapse.md`.)
+**Producto base:** indicador/escáner algorítmico de acceso **Invite-Only en TradingView**, exclusivo para **Oro (XAUUSD), temporalidad M15**, con **dos sesiones diarias independientes** — Nueva York (7:00–11:00 a.m.) y Asia (6:00–10:00 p.m.), hora Colombia — cada una con su propia señal etiquetada y su propio win rate visible en el panel. El usuario elige qué señal seguir. Entrega señal de entrada, Stop Loss, dos Take Profit (TP1/TP2) y el lotaje calculado según capital y riesgo del trader. (Detalle técnico completo en `indicador_synapse.md`.)
 
 **Envoltorio comercial (embudo):**
 
