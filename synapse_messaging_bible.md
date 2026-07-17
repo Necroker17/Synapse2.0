@@ -6,27 +6,27 @@
 
 ## 0. Fuentes de esta Biblia
 
-- **Investigación "Las 7 Maletas"** (metodología Felipe Vergara, modo directo) — 4 de julio de 2026. Encuesta propia a **33 usuarios reales en trial** (2 preguntas cerradas + respuestas abiertas), auditoría completa de la landing, benchmarking competitivo de **4 arquetipos** (grupos gratis Telegram/WhatsApp, señales premium en inglés — GoldSignals.io/AltSignals/ApexBull —, scripts "IA/Prop Firm" de TradingView, academias tipo Profit4Life).
+- **Investigación de mercado propia** — 4 de julio de 2026. Encuesta propia a **33 usuarios reales en trial** (2 preguntas cerradas + respuestas abiertas), auditoría completa de la landing, benchmarking competitivo de **4 arquetipos** (grupos gratis Telegram/WhatsApp, señales premium en inglés — GoldSignals.io/AltSignals/ApexBull —, scripts "IA/Prop Firm" de TradingView, academias tipo Profit4Life). Organizada en 7 secciones: Público, Problema, Solución, Diferenciales, Testimonios, Objeciones, Garantía.
 - `ESTRATEGIA.md`, `manual_marketing.md`, `business_plan/Hotmart/estructura_contenido.md`, `ROADMAP/briefing_marketing_audiovisual.md`, `Formularios/formulario_trial15dias.md`, `Landing_SynapseAI/lib/stats.ts`.
 
-**Nota de fecha:** la investigación de las 7 Maletas se corrió el mismo día en que se oficializó el trial de 15 días (`ESTRATEGIA.md`, decisión 2026-07-04) y todavía habla de "7 días gratis" en algunos puntos (oferta, garantía). En esta Biblia esos datos se leen como **investigación válida sobre el comportamiento y el dolor del usuario**, pero la oferta vigente en todo copy nuevo es **15 días**, no 7.
+**Nota de fecha:** la investigación de mercado se corrió el mismo día en que se oficializó el trial de 15 días (`ESTRATEGIA.md`, decisión 2026-07-04) y todavía habla de "7 días gratis" en algunos puntos (oferta, garantía). En esta Biblia esos datos se leen como **investigación válida sobre el comportamiento y el dolor del usuario**, pero la oferta vigente en todo copy nuevo es **15 días**, no 7.
 
 ---
 
 ## 1. Enemy (el enemigo)
 
-**[PROPUESTA — síntesis de Maleta 2 y Maleta 3]**
+**[PROPUESTA — síntesis de la investigación de mercado, secciones Problema y Solución]**
 
 Dos capas de enemigo, no una:
 
 - **Enemigo interno (el principal):** el "yo emocional" que decide en caliente — el que mueve el Stop Loss, cierra en pánico, entra por FOMO o cierra una ganadora antes de tiempo porque "no se la cree". No es un enemigo externo a vencer, es una versión de uno mismo que aparece exactamente en el peor momento: el instante de la vela en movimiento.
-- **Enemigo externo (secundario, de categoría):** la industria de señales que promete "85% success rate" y "ganancias inesperadas" sin nada que lo respalde — la misma razón por la que la audiencia desconfía por defecto de cualquier "grupo de señales" **[DATO — Maleta 6, objeciones #6 y #9]**. Este enemigo no se ataca de frente (sería quejarse de la competencia); se derrota por contraste: mostrando lo que ellos no muestran.
+- **Enemigo externo (secundario, de categoría):** la industria de señales que promete "85% success rate" y "ganancias inesperadas" sin nada que lo respalde — la misma razón por la que la audiencia desconfía por defecto de cualquier "grupo de señales" **[DATO — investigación de mercado, sección Objeciones #6 y #9]**. Este enemigo no se ataca de frente (sería quejarse de la competencia); se derrota por contraste: mostrando lo que ellos no muestran.
 
 **Frase de enemigo (uso en copy):** *"No es falta de disciplina. Es que decidiste con la emoción, no con el plan — y en ese segundo, siempre gana la emoción."*
 
 ## 2. Big Idea
 
-**[DATO — ya aprobada, `ESTRATEGIA.md` §2, confirmada por comportamiento real en Maleta 3]**
+**[DATO — ya aprobada, `ESTRATEGIA.md` §2, confirmada por comportamiento real en la investigación de mercado, sección Solución]**
 
 > El 90% de los traders pierde por no seguir sus propias reglas. Synapse AI toma esa decisión por ti — con matemática, no con emociones.
 
@@ -34,29 +34,29 @@ Esto ya no es solo un ángulo de copy: la investigación encontró el patrón **
 
 ## 3. Nueva Oportunidad
 
-**[PROPUESTA, anclada en Maleta 2 y Maleta 3]**
+**[PROPUESTA, anclada en la investigación de mercado, secciones Problema y Solución]**
 
 El mercado ya probó "más disciplina" y "mejor estrategia" — y ambas fallan por el mismo motivo: dependen de la fuerza de voluntad exactamente en el momento en que la fuerza de voluntad es más débil (la vela en movimiento, la pérdida reciente, el aburrimiento). La nueva oportunidad no es una estrategia mejor, es **sacar al trader del punto de decisión**: el sistema decide antes de que la emoción tenga oportunidad de opinar.
 
-Esto se extiende más allá de "evitar pérdidas": la investigación detectó un dolor no buscado — **"Romper Topes Mentales"** **[DATO — Maleta 2, mención cualitativa espontánea]** — traders que no le tienen miedo a perder, le tienen miedo a *ganar en grande* y cierran ganadoras antes de tiempo. El Break-Even automático no solo protege capital: le quita al trader la oportunidad de autolimitarse.
+Esto se extiende más allá de "evitar pérdidas": la investigación detectó un dolor no buscado — **"Romper Topes Mentales"** **[DATO — investigación de mercado, sección Problema, mención cualitativa espontánea]** — traders que no le tienen miedo a perder, le tienen miedo a *ganar en grande* y cierran ganadoras antes de tiempo. El Break-Even automático no solo protege capital: le quita al trader la oportunidad de autolimitarse.
 
 ## 4. Mecanismo único
 
 **[DATO + PROPUESTA de nombre]**
 
-La combinación que ningún competidor mapeado ofrece completa, y que la propia encuesta confirma como el atractivo #1 (**61% — 20 de 33 respuestas** eligieron "recibir las alertas con el riesgo exacto en $ USD en el celular" por encima de "precisión técnica" o "resultados históricos") **[DATO — Maleta 5]**:
+La combinación que ningún competidor mapeado ofrece completa, y que la propia encuesta confirma como el atractivo #1 (**61% — 20 de 33 respuestas** eligieron "recibir las alertas con el riesgo exacto en $ USD en el celular" por encima de "precisión técnica" o "resultados históricos") **[DATO — investigación de mercado, sección Testimonios]**:
 
 > **Alerta móvil + riesgo ya calculado en USD por 0.01 lotes + precio accesible en USD para LatAm.**
 
 **Nombre propuesto del mecanismo:** *"Filtro Sniper + Riesgo en el Bolsillo"* **[PROPUESTA]** — dos piezas inseparables: (1) el filtro de múltiples capas que solo dispara en setups de alta probabilidad (no opera a fuerza bruta), y (2) el cierre del ciclo hasta el celular, con el cálculo de riesgo ya hecho, sin que el usuario necesite saber leer un gráfico.
 
-**Por qué es defendible:** el benchmarking (Maleta 3) confirma que los competidores premium comunican "señales + gestión de riesgo" en términos genéricos — ninguno comunica explícitamente "eliminar la deliberación emocional" como mecanismo central. Ahí Synapse ya tiene ventaja de mensaje sobre la categoría.
+**Por qué es defendible:** el benchmarking (investigación de mercado, sección Solución) confirma que los competidores premium comunican "señales + gestión de riesgo" en términos genéricos — ninguno comunica explícitamente "eliminar la deliberación emocional" como mecanismo central. Ahí Synapse ya tiene ventaja de mensaje sobre la categoría.
 
-**Brecha a cerrar:** los competidores premium en inglés (GoldSignals.io, AltSignals) sí tienen **track record auditado por terceros (tipo Myfxbook)** — algo que Synapse hoy no tiene **[DATO — Maleta 4 y 7]**. Mientras no se cierre esa brecha, el mecanismo único no debe venderse como "más confiable", sino como "más accionable" (más rápido de ejecutar, más barato, en tu idioma).
+**Brecha a cerrar:** los competidores premium en inglés (GoldSignals.io, AltSignals) sí tienen **track record auditado por terceros (tipo Myfxbook)** — algo que Synapse hoy no tiene **[DATO — investigación de mercado, secciones Diferenciales y Garantía]**. Mientras no se cierre esa brecha, el mecanismo único no debe venderse como "más confiable", sino como "más accionable" (más rápido de ejecutar, más barato, en tu idioma).
 
 ## 5. Creencias
 
-**[PROPUESTA — qué debe creer el prospecto antes de comprar, derivado de Maleta 2, 3 y 6]**
+**[PROPUESTA — qué debe creer el prospecto antes de comprar, derivado de la investigación de mercado, secciones Problema, Solución y Objeciones]**
 
 1. Su problema no es falta de estrategia — es falta de un sistema que lo saque de la decisión emocional en el momento exacto.
 2. Se puede operar bien sin estar pegado al gráfico todo el día (contradice la creencia por defecto de "hay que vigilar el mercado para ganar").
@@ -66,7 +66,7 @@ La combinación que ningún competidor mapeado ofrece completa, y que la propia 
 
 ## 6. Objeciones
 
-**[DATO — tabla completa de Maleta 6, priorizada]**
+**[DATO — tabla completa de la investigación de mercado, sección Objeciones, priorizada]**
 
 | # | Objeción | Evidencia | ¿Resuelta hoy? |
 |---|---|---|---|
@@ -95,7 +95,7 @@ Categoría actual del mercado: "grupo de señales" — categoría con desconfian
 
 > Para el trader de Oro que ya conoce el mercado pero se sabotea en la ejecución, Synapse AI es el asistente algorítmico que decide la entrada, el riesgo y la salida por ti — a diferencia de los grupos de señales gratuitos (sin gestión de riesgo) o las señales premium en inglés (sin acceso móvil accionable en tu idioma, a precio LatAm), porque entrega el riesgo ya calculado en USD directo a tu WhatsApp y protege tu capital en Break-Even automático, sin que tengas que mirar un gráfico.
 
-**Mapa competitivo [DATO — Maleta 4]:**
+**Mapa competitivo [DATO — investigación de mercado, sección Diferenciales]:**
 
 | Diferencial | Synapse | Grupos gratis | Premium inglés | Scripts IA/Prop Firm |
 |---|---|---|---|---|
@@ -137,7 +137,7 @@ El espacio en blanco defendible es la combinación completa de fila 1 + fila 4. 
 - **Premium y minimalista** en lo visual: modo oscuro, acentos naranja/dorado, cero desorden.
 - **Límite ético no negociable:** nunca promete resultados; el disclaimer de riesgo es obligatorio en toda pieza pública.
 
-**Ajuste pendiente de aplicar [PROPUESTA, Maleta 1]:** hoy la voz le habla mejor al trader avanzado ("en 5 segundos, sin pensar") que al principiante — y la audiencia real está repartida entre avanzado, intermedio y principiante, no concentrada en el primero. Para el segmento principiante, la voz debe ofrecer **confianza para empezar**, no solo velocidad ("no necesitas saber leer un gráfico para operar con matemática" — ángulo ya validado en Maleta 2/Anuncio 2).
+**Ajuste pendiente de aplicar [PROPUESTA, investigación de mercado, sección Público]:** hoy la voz le habla mejor al trader avanzado ("en 5 segundos, sin pensar") que al principiante — y la audiencia real está repartida entre avanzado, intermedio y principiante, no concentrada en el primero. Para el segmento principiante, la voz debe ofrecer **confianza para empezar**, no solo velocidad ("no necesitas saber leer un gráfico para operar con matemática" — ángulo ya validado en sección Problema / Anuncio 2).
 
 ## 11. Elevator Pitch
 
@@ -171,7 +171,7 @@ El espacio en blanco defendible es la combinación completa de fila 1 + fila 4. 
 
 ## 14. Investigación del avatar — hallazgos crudos (para consulta rápida)
 
-**[DATO — Maleta 1, n=33]**
+**[DATO — investigación de mercado, sección Público, n=33]**
 
 - **Ubicación:** predominantemente Colombia, con Perú, España y Paraguay — audiencia hispanohablante LatAm + España.
 - **Género (estimado):** ~75-80% nombres de presentación masculina, ~20-25% femenina.
@@ -187,7 +187,7 @@ El espacio en blanco defendible es la combinación completa de fila 1 + fila 4. 
 
 ## 15. Ángulos de anuncio ya validados por esta investigación (para cuando se construya la categoría Ads)
 
-**[DATO — Maleta "Listos para lanzar", ninguno repite el ángulo de autosabotaje que ya domina el mensaje actual]**
+**[DATO — investigación de mercado, sección de anuncios propuestos, ninguno repite el ángulo de autosabotaje que ya domina el mensaje actual]**
 
 1. **Romper Topes Mentales** — *"¿Ganas la operación... y la cierras antes de tiempo, como si no te la creyeras?"*
 2. **Fricción de activación** — *"No necesitas saber leer un gráfico para operar con matemática."*
@@ -202,4 +202,4 @@ El espacio en blanco defendible es la combinación completa de fila 1 + fila 4. 
 
 ---
 
-*Metodología base de la investigación: "Las 7 Maletas de Cualquier Compra" — Felipe Vergara. Reporte original: `7maletassynapseaiscanner20260704.html`, 4 de julio de 2026.*
+*Reporte original de investigación de mercado, 4 de julio de 2026 (encuesta propia + benchmarking competitivo + auditoría de landing).*
