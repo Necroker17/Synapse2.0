@@ -17,6 +17,7 @@
 | 5 — Deseo | Asset 6 (Mecanismo), Asset 7 (Prueba), Asset 11 (Simplicidad de ejecución), Asset 12 (Doble oportunidad), Asset 13 (Voces reales), Asset 14 (Comunidad), Asset 16 (vs. la competencia) |
 | 6 — Conversión | Asset 8 (Oferta), Asset 15 (Disciplina mínima viable), Asset 17 (Transformación en 3 semanas) |
 | 7 — Cierre | Asset 9 (Urgencia), Asset 17 (Transformación en 3 semanas) |
+| Comunidad (grupo WhatsApp, transversal) | Asset 18 (Sistema Nervioso) — también apto para Fase 5 (Deseo) en su variante sin marca |
 
 ## Ficha estándar
 
@@ -191,6 +192,17 @@ Cada asset responde: Objetivo estratégico · Creencia que destruye · Creencia 
 - **⚠️ Reglas duras:** nunca prometer ganancias ni usar win rate/profit factor sin reconciliar (misma dependencia de `synapse_messaging_bible.md` §6); disclaimer de riesgo obligatorio en el caption.
 - **Ya desarrollado:** carrusel completo en `synapse_carrusel_trial_avanzado.md` (skill `carrusel-dicotomico`).
 - **Genera:** carrusel de transformación (ya hecho), WhatsApp de check-in día 13-15 (conecta con `product_growth_tasks.md` Experimento 1), email de oferta de conversión anticipada (Experimento 3), testimonio en historia.
+
+## Asset 18 — Sistema Nervioso
+
+- **Objetivo estratégico:** elevar el costo percibido del autosabotaje del plano financiero al plano vital: un sistema nervioso alterado no solo pierde trades — impide disfrutar (sueño, familia, presencia) y obtener (claridad, consistencia, paciencia).
+- **Creencia que destruye:** "El estrés es el precio normal de operar; se aguanta."
+- **Creencia que instala:** "Decidir bajo estrés es biológicamente peor — y no tengo por qué seguir decidiendo en ese estado."
+- **Emoción dominante:** reconocimiento visceral (el cuerpo como testigo) → alivio.
+- **Base científica (con fuentes en `synapse_carrusel_sistema_nervioso.md` §1):** el cortisol sostenido degrada el control de impulsos del córtex prefrontal; revisar posiciones compulsivamente dispara picos de estrés en bucle; traders con sistema nervioso regulado muestran mejor disciplina y menos revenge trading.
+- **⚠️ Límite ético duro:** nunca presentar a Synapse como tratamiento o regulador del sistema nervioso (claim de salud). Solo: el sistema elimina el momento repetido de decisión bajo presión. Disclaimer ampliado ("no es un tratamiento de salud") en toda pieza de este asset.
+- **Ya desarrollado:** carrusel completo para el grupo de WhatsApp en `synapse_carrusel_sistema_nervioso.md`.
+- **Genera:** carrusel (hecho), historias de "señales de que operás en alarma", reel del bucle pérdida→estrés→peor decisión, email "tu cuerpo también lleva la cuenta", live con invitado sobre estrés y decisiones.
 
 ---
 
