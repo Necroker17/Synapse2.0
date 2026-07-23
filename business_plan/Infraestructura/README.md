@@ -8,6 +8,8 @@
 
 El siguiente diagrama detalla cómo se conectan los componentes del sistema, desde la captación de un usuario en trial hasta la compra de una membresía y su posterior activación y control de accesos.
 
+> **Versión actualizada:** `arquitectura_final_embudo.md` incorpora la decisión de trial continuo (sin fechas de corte), la estructura de dos grupos de WhatsApp (nutrición vs. señales) y las ventanas de conversión por quincena — ante conflicto con el diagrama de abajo, gana ese documento.
+
 ```mermaid
 graph TD
     %% Landing & Registro %%
@@ -40,6 +42,7 @@ graph TD
 * [procesos_manuales.md](file:///Users/juanzarate/juan_dev_projects/trading_view_projects/indicators/v3-SynapseAI_Scanner/marketing/business_plan/Infraestructura/procesos_manuales.md) — Procedimientos paso a paso para la activación/desactivación de accesos en TradingView, soporte por WhatsApp y conciliación de pagos.
 * [flujos_automatizacion.md](file:///Users/juanzarate/juan_dev_projects/trading_view_projects/indicators/v3-SynapseAI_Scanner/marketing/business_plan/Infraestructura/flujos_automatizacion.md) — Definición técnica de los escenarios de Make, disparadores de Manychat y consumo de la WhatsApp API para gestionar el trial y las compras.
 * [base_datos_sheets.md](file:///Users/juanzarate/juan_dev_projects/trading_view_projects/indicators/v3-SynapseAI_Scanner/marketing/business_plan/Infraestructura/base_datos_sheets.md) — Estructura detallada de la base de datos de clientes, el registro contable de cobros y el panel financiero alojado en Google Sheets.
+* [arquitectura_final_embudo.md](./arquitectura_final_embudo.md) — Arquitectura consolidada del embudo (trial continuo + grupos de WhatsApp segmentados + ventanas de conversión por quincena) y roadmap de lo que falta construir.
 
 ---
 
