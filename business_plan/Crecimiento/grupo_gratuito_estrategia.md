@@ -4,6 +4,8 @@
 
 ## 1. Mapa final de grupos internos
 
+> ⚠️ **Superado.** El mapa de 6 espacios de esta sección quedó reemplazado por la estructura de 3 grupos en `business_plan/Infraestructura/estructura_grupos_whatsapp.md`. Se conserva acá como referencia de lo que se evaluó. El ritmo de contenido de la §2 sigue siendo válido y se recoge, actualizado, en el documento nuevo.
+
 Reconciliando `arquitectura_final_embudo.md` (2 grupos) con la estructura de comunidad ya definida en `estructura_indicador_reunion_gustavo_juan.md` §6, el negocio termina con **6 espacios distintos**, no 2:
 
 | # | Espacio | Audiencia | Contenido | CERO señales en tiempo real |

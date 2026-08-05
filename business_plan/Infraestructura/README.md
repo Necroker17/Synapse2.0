@@ -43,6 +43,7 @@ graph TD
 * [flujos_automatizacion.md](file:///Users/juanzarate/juan_dev_projects/trading_view_projects/indicators/v3-SynapseAI_Scanner/marketing/business_plan/Infraestructura/flujos_automatizacion.md) — Definición técnica de los escenarios de Make, disparadores de Manychat y consumo de la WhatsApp API para gestionar el trial y las compras.
 * [base_datos_sheets.md](file:///Users/juanzarate/juan_dev_projects/trading_view_projects/indicators/v3-SynapseAI_Scanner/marketing/business_plan/Infraestructura/base_datos_sheets.md) — Estructura detallada de la base de datos de clientes, el registro contable de cobros y el panel financiero alojado en Google Sheets.
 * [arquitectura_final_embudo.md](./arquitectura_final_embudo.md) — Arquitectura consolidada del embudo (trial continuo + grupos de WhatsApp segmentados + ventanas de conversión por quincena) y roadmap de lo que falta construir.
+* [estructura_grupos_whatsapp.md](./estructura_grupos_whatsapp.md) — Los 3 grupos de WhatsApp (Sala de Operación, Comunidad, Punto de Partida): quién entra a cada uno, contenido, frecuencia, encuesta semanal y cómo el Manual de Bienvenida los alimenta. Reemplaza el modelo de 2 grupos de `arquitectura_final_embudo.md` §3.
 
 ---
 
