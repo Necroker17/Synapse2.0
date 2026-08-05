@@ -1,205 +1,314 @@
-# Estructura de los 3 Grupos de WhatsApp — Contenido, Frecuencia y Experiencia de Usuario
+# Los 3 Grupos de WhatsApp — Estructura, Mejoradores de Conversión y Administración Automatizable
 
 > **Estado:** propuesta detallada, pendiente de confirmación de `/product`.
 >
-> **Reemplaza** el mapa de 6 espacios de `business_plan/Crecimiento/grupo_gratuito_estrategia.md` §1 y el modelo de 2 grupos de `arquitectura_final_embudo.md` §3 (decisión 3). Se apoya en `procesos_manuales.md` §3 (protocolo de soporte de Meli), `flujos_automatizacion.md` (tags y secuencias que ya existen) y en la propuesta de *Manual de Bienvenida* (documento externo, v1.0).
+> **Reemplaza** el mapa de 6 espacios de `business_plan/Crecimiento/grupo_gratuito_estrategia.md` §1 y el modelo de 2 grupos de `arquitectura_final_embudo.md` §3. Se apoya en `procesos_manuales.md` §3 (protocolo de soporte de Meli), `flujos_automatizacion.md` (tags y escenarios que ya existen) y en la propuesta de *Manual de Bienvenida* (documento externo, v1.0).
 
 ---
 
-## 0. Resumen de la estructura
+## 0. Marco operativo del indicador (base de todo lo demás)
 
-| # | Grupo | Quién entra | Trabajo que hace | Señales en tiempo real |
-|---|---|---|---|---|
-| 1 | **Sala de Operación** | Acceso activo (pago + trial vigente) | Entregar señales y sostener disciplina | ✅ Sí — es el único |
-| 2 | **Comunidad Synapse** | Abierto: fríos, trial, vencidos, clientes | Prueba social y educación permanente | ❌ Nunca |
-| 3 | **Punto de Partida** | Trial recién reclamado (rota cada 15 días) | Activar al usuario que nunca opera | ❌ No |
+**[DATO — definido por Juan, sesión de trabajo]**
 
-**El principio que ordena todo:** cada grupo responde a **una sola pregunta** que el usuario se está haciendo en ese momento de su recorrido. Si un grupo intenta responder dos preguntas a la vez, se satura y la gente lo silencia.
-
-- Grupo 3 responde: *"¿Por dónde empiezo?"*
-- Grupo 1 responde: *"¿Qué hago ahora?"*
-- Grupo 2 responde: *"¿Esto realmente funciona para gente como yo?"*
-
----
-
-## 1. Dos decisiones que hay que tomar antes de montar esto
-
-### Decisión A — ¿El usuario en trial entra a la Sala de Operación? **(la más importante)**
-
-El planteamiento inicial dice "grupo 1 para las personas que ya pagaron". Tomado literal, el usuario en trial **nunca recibiría una alerta por WhatsApp** durante sus 15 días. Eso choca de frente con el dato más fuerte que tenemos: **el 61% de la audiencia (20 de 33) eligió "recibir las alertas con el riesgo exacto en $USD en el celular" como el atributo más valioso del producto** [DATO — `synapse_messaging_bible.md` §4]. Es el diferencial #1 y ningún competidor mapeado lo ofrece completo.
-
-Si el trial no demuestra el diferencial #1, el trial no demuestra el producto.
-
-**Recomendación:** el Grupo 1 es de **acceso activo**, no de "ya pagó" — entran los clientes y también el trial vigente. Es exactamente lo que ya decidió `arquitectura_final_embudo.md` §3 y lo que el sistema ya soporta (Manychat entrega el link a quien tenga tag `trial_activo` **o** `cliente_activo`). La salida al vencer el trial ya está contemplada en el barrido manual semanal de `procesos_manuales.md` §1.2.
-
-**Si se prefiere que el Grupo 1 sea estrictamente de pagos**, entonces hay que decidir cómo recibe alertas el trial: 1 a 1 vía Manychat (más costo operativo) o solo viendo el indicador en su propio TradingView (trial más débil, conversión previsiblemente peor). No recomiendo esta vía, pero es viable si la prioridad es blindar la señal.
-
-### Decisión B — ¿Dónde conversa la gente?
-
-Tres grupos, y ninguno está designado como espacio de conversación abierta. En WhatsApp, un grupo con señales **y** charla libre hace que las señales se pierdan entre mensajes: el usuario abre el grupo, ve 40 mensajes sin leer, y no encuentra la alerta. Es el fallo de experiencia más común en grupos de señales.
-
-**Recomendación:** Grupo 1 abierto a conversación, pero con dos reglas mecánicas:
-1. **Cada señal se fija (pin)** al publicarse.
-2. **El resultado se publica como respuesta (reply) al mensaje original de la señal**, nunca suelto. Así el hilo entrada → resultado queda trazable aunque haya ruido en el medio.
-
-La alternativa —grupo de solo-administradores— protege perfecto la señal pero mata la comunidad, que es justamente parte de lo que se está vendiendo. La regla del pin + reply da el 80% del beneficio sin ese costo.
-
----
-
-## 2. Grupo 1 · Sala de Operación
-
-**Pregunta que responde:** *"¿Qué hago ahora?"*
-**Estado emocional del que entra:** pagó (o está probando) y quiere que le demuestren que valió la pena.
-**Riesgo principal:** que el silencio de los días sin señal se lea como abandono.
-
-### Contenido y frecuencia
-
-| Momento | Pieza | Frecuencia | Por qué |
-|---|---|---|---|
-| Sesión NY (7:00-11:00) y Asia (18:00-22:00) | **Señal en tiempo real** con entrada, stop, riesgo en USD y break-even | Cuando exista — nunca forzada | El core del producto. Horarios ya fijados en `procesos_manuales.md` §3.1 |
-| Al cerrar cada operación | **Resultado**, ganada o perdida, como reply a la señal | Por operación | El compromiso #1 de la marca es no ocultar perdedoras |
-| Día sin señal | **"Hoy no hubo alerta"** explícito | Cada día que aplique | Sin esto el silencio parece abandono. Además ataca la sobre-operativa (27.3% de la encuesta): *"si no hay alerta, no hay operación, y eso también es el sistema funcionando"* |
-| Lunes | **Recap de la semana** con números reales | 1x semana | ⚠️ Bloqueado hasta reconciliar métricas (`synapse_messaging_bible.md` §6) |
-| Miércoles | **Recordatorio de disciplina** — un error del Módulo 5 del Manual, rotando | 1x semana | Convierte el manual en hábito, no en PDF olvidado |
-| Fin de semana | **Clase en vivo** | 1x semana | Ya comprometido en la estructura de comunidad |
-| Jueves | **Encuesta semanal** (ver §5) | 1x semana | |
-
-**Total: ~4 publicaciones propias por semana + las señales.** Suficiente para que el grupo se sienta vivo sin saturar a quien solo quiere la alerta.
-
-### Mensaje fijado permanente
-
-El **Checklist Antes de Operar** (Módulo 7 del Manual). Es lo que el usuario necesita tener a un toque de distancia en el momento exacto de ejecutar.
-
----
-
-## 3. Grupo 2 · Comunidad Synapse (testimonios y experiencias)
-
-**Pregunta que responde:** *"¿Esto realmente funciona para gente como yo?"*
-**Quién entra:** abierto — prospectos fríos, trial activo, trial vencido sin convertir, y clientes que quieran quedarse.
-**Regla dura:** cero señales en tiempo real, siempre. Solo resultados ya cerrados.
-
-### El problema con "grupo de experiencias positivas"
-
-Planteado como espacio de **solo** experiencias positivas, este grupo trabaja en contra del objetivo declarado del propio Manual. El Manual arranca diciendo que *"una parte importante de los usuarios obtiene resultados diferentes utilizando exactamente las mismas señales"* y que eso *"crea la percepción errónea de que el indicador no funciona"*.
-
-Un muro de solo ganancias **produce** esa percepción: el usuario nuevo ve puros wins, tiene su primera pérdida —que era estadísticamente esperable— y concluye que el indicador está roto o que él es el problema. Es la primera causa de abandono temprano.
-
-**Recomendación:** el grupo es de **experiencias reales**, con tres tipos de contenido, no uno:
-1. **Testimonios de resultado** (con permiso explícito y disclaimer de riesgo).
-2. **Testimonios de proceso** — *"volví a seguir mi plan"*. La investigación encontró que lo más valioso para el usuario no fue "gané dinero" sino recuperar el proceso [DATO — investigación de mercado].
-3. **Una pérdida bien gestionada por mes**, mostrada con su riesgo pre-definido. Ningún competidor hace esto: es el activo de confianza más diferenciado que tiene la marca, y calibra expectativas antes de que la pérdida ocurra.
-
-### Contenido y frecuencia
-
-| Día | Pieza | Nota |
+| Concepto | Valor | En USD a 0.01 lotes |
 |---|---|---|
-| Lunes | Resultado de la semana anterior (ya cerrado) | Ataca la objeción #1: verificabilidad |
-| Martes | Pieza educativa — serie autosabotaje (`synapse_serie_autosabotaje_prompts.md`) | Rotar tema, no repetir dos semanas seguidas |
-| Miércoles | Testimonio real (rotar entre resultado y proceso) | Verificar permiso antes de publicar |
-| Viernes | Anuncio de la clase en vivo | |
-| 1x al mes | **"Así se ve una pérdida bien gestionada"** | El activo diferenciador |
-| Días 1-3 y 13-17 | Oferta explícita (ventanas de quincena) | Fuera de esas ventanas: máximo 1 mención suave por semana |
+| Sesiones | Nueva York (7:00-11:00) y Asia (18:00-22:00), UTC-5 | — |
+| Stop Loss | 160 pips | **$16** |
+| TP1 | 160 pips | **$16** (1R) |
+| TP2 | 320 pips totales | **$32** (2R) |
+| Break-even automático | Al alcanzar TP1 | Riesgo pasa a $0 |
 
-**Total: 4-5 publicaciones por semana.**
+La operación busca **2 veces lo que arriesga**. A 0.01 lotes —el lote mínimo— el riesgo es fijo en $16: no se puede bajar más. Quien tenga más capital escala el lotaje; quien tenga menos, no tiene margen de ajuste hacia abajo.
 
-### Mensaje fijado permanente
+### Esto corrige un señalamiento mío anterior
 
-Prueba social + cómo activar el trial de 15 días. Siempre visible para quien entra nuevo, sin depender de que alguien lo repita.
+En la versión previa marqué los "$16 por operación" del Módulo 3 del Manual como un error, comparándolos contra los $3.50 de un ejemplo de alerta de la documentación de marca. **La cifra del Manual es la correcta**: 160 pips a 0.01 lotes son exactamente $16. El ejemplo de $3.50 corresponde a un stop de 35 pips y no representa la operativa real del indicador — ese ejemplo es el que está desactualizado, y conviene corregirlo donde aparezca para que no siga generando confusión.
+
+### Lo que sí conviene cambiar en el Módulo 3: invertir la tabla
+
+El riesgo en dólares es **fijo** ($16) porque 0.01 es el mínimo. Entonces la variable no es cuánto arriesgar, es **cuánto capital hace falta** para que esos $16 representen un riesgo sano:
+
+| Capital | Riesgo por operación | % del capital | Lectura |
+|---|---|---|---|
+| $320 | $16 | **5%** | Agresivo — 6 pérdidas seguidas cuestan el 30% de la cuenta |
+| $800 | $16 | **2%** | Límite superior de lo razonable |
+| $1.600 | $16 | **1%** | Conservador, es el estándar de gestión profesional |
+
+Presentarlo así ("para operar al 2% necesitas $800") es más honesto y más útil que "con $320 arriesga $16", y le da al usuario un objetivo de capitalización claro en vez de empujarlo a operar sub-capitalizado. **Sigue en pie el otro señalamiento del Módulo 3:** la línea *"Ganancia estimada: 80 USD mensuales"* es una proyección de rentabilidad impresa en el documento oficial de bienvenida y choca con el compromiso de no prometer rentabilidades. La ganancia no se proyecta, se reporta después con números reales.
+
+**Propagación pendiente:** este marco (160 pips / $16 / 2R) debería bajar también a `indicador_synapse.md`, `synapse_messaging_bible.md` y a la skill `synapse-escenarios`, donde hoy vive el ejemplo de $3.50.
 
 ---
 
-## 4. Grupo 3 · Punto de Partida (trial recién reclamado)
+## 1. Los 3 grupos
 
-**Pregunta que responde:** *"¿Por dónde empiezo?"*
+| # | Grupo | Quién entra | Pregunta que responde | Trabajo que hace |
+|---|---|---|---|---|
+| **1** | **Punto de Partida** | Trial recién reclamado | *"¿Por dónde empiezo?"* | Que use bien el trial y se conecte con el ecosistema |
+| **2** | **Sala de Testimonios** | Trial vencido sin comprar · no-recompra | *"¿Qué me estoy perdiendo?"* | Demanda acumulada — que vea a otros construyendo |
+| **3** | **Sala de Operación** | Clientes con plan activo | *"¿Qué hago ahora?"* | Entregar señales y sostener disciplina |
 
-**Este es el grupo de mayor apalancamiento de los tres.** Cerca del **45% de los registrados no llegó a operar la herramienta dentro de la ventana de prueba** [DATO — `synapse_messaging_bible.md` §6], y hoy **no existe ninguna pieza de comunicación para ese momento del recorrido**. Es territorio virgen: el punto donde se pierde casi la mitad del embudo, sin nada construido para atenderlo.
+**El principio que ordena todo:** cada grupo responde **una sola pregunta**. Si un grupo intenta responder dos, se satura y la gente lo silencia — y un grupo silenciado es un grupo muerto que además ya no se puede reactivar.
 
-### El detalle de diseño que hay que resolver: la cohorte rota
+**El flujo entre grupos:**
 
-El trial es continuo, sin fechas de corte (`arquitectura_final_embudo.md`, decisión 1). Entonces la gente entra cualquier día, y un contenido secuenciado tipo "Día 1 → Día 15" publicado en el grupo le llega a destiempo a casi todo el mundo.
+```
+Reclama trial ──▶ GRUPO 1 (15 días)
+                     │
+                     ├── compra ──▶ GRUPO 3 (permanente)
+                     │
+                     └── no compra ──▶ GRUPO 2 (indefinido, se reactiva por quincenas)
+                                          │
+                                          └── compra después ──▶ GRUPO 3
+```
 
-**La solución ya está construida:** la secuencia personalizada por hitos (Días 1, 3, 7, 10, 13, 15) ya vive en Manychat como mensajes 1 a 1 (`flujos_automatizacion.md`). Entonces:
+Nadie sale del ecosistema por no haber comprado: sale del Grupo 1 y cae en el Grupo 2, donde sigue viendo prueba social. El Grupo 2 no es un cementerio, es la sala de espera.
 
-- **La secuencia personalizada** → Manychat, 1 a 1, como ya funciona.
-- **El grupo** → solo contenido *evergreen*, que sirve igual entre a quien entró ayer y a quien entró hace diez días.
+---
+
+## 2. Qué se puede automatizar de verdad en WhatsApp (leer antes de diseñar nada)
+
+Este es el punto que define toda la estrategia de administración, y conviene tenerlo claro antes de construir:
+
+**La API oficial de WhatsApp sí soporta mensajes a grupos desde 2026, pero con un tope de 8 miembros por grupo** ([Meta for Developers · Groups API](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups)). Ese límite la deja fuera para grupos de comunidad de decenas o cientos de personas. En la práctica: **no se puede automatizar la publicación en un grupo grande de WhatsApp por vía oficial.**
+
+Las opciones reales, con su costo:
+
+| Vía | Publica en grupos grandes | Automatizable | Riesgo |
+|---|---|---|---|
+| **API oficial (Cloud API / Manychat / Make)** | ❌ Máx. 8 miembros | ✅ Total | Ninguno |
+| **Canales de WhatsApp** | ✅ Sin límite de seguidores | ❌ Publicación manual | Ninguno |
+| **Librerías no oficiales** (Baileys, whatsapp-web.js) | ✅ | ✅ | ⚠️ Viola términos de servicio. Riesgo real de baneo del número principal del negocio |
+
+### La conclusión arquitectónica
+
+**La automatización no vive en el grupo. Vive en el 1 a 1.**
+
+- **Lo automatizable** (Make + Manychat, y en gran parte **ya está construido**): detectar quién entró, quién no se activó, quién vence, quién compró; enviar la secuencia por hitos; entregar el link del grupo; disparar el aviso a Meli para que intervenga.
+- **Lo manual** (pero reducido a una checklist corta y con contenido pre-producido en lote): publicar en el grupo.
+
+Esto no es una limitación que haya que superar: es la división correcta. El grupo aporta **pertenencia y prueba social** —cosas que solo funcionan si se sienten humanas—, y el 1 a 1 aporta **la intervención personalizada en el momento exacto**, que es donde la automatización rinde.
+
+### Recomendación concreta: el Grupo 2 debería ser un Canal, no un grupo
+
+El Grupo 2 es unidireccional por naturaleza —la gente mira lo que otros logran, no conversa—. Convertirlo en **Canal de WhatsApp** trae tres ventajas y ninguna pérdida:
+
+1. Escala sin límite de miembros.
+2. Cero solicitudes falsas de ingreso y cero moderación.
+3. El usuario no siente que "lo metieron a un grupo de ventas": sigue un canal, y lo puede dejar de seguir sin el costo social de salirse de un grupo. Menos fricción para entrar, más permanencia.
+
+---
+
+## 3. Grupo 1 · Punto de Partida (trial recién reclamado)
+
+**Pregunta:** *"¿Por dónde empiezo?"*
+**Duración:** los 15 días del trial. Cohorte rotativa.
+**Objetivo declarado:** que al terminar el trial la persona esté conectada con el ecosistema y quiera comprar.
+
+**Es el grupo de mayor apalancamiento del negocio.** Cerca del **45% de los registrados no llega a operar la herramienta dentro de la ventana de prueba** [DATO — `synapse_messaging_bible.md` §6], y hoy no existe ninguna pieza de comunicación para ese momento. Es la fuga más grande del embudo y está completamente desatendida.
+
+### El detalle de diseño crítico: la cohorte rota
+
+El trial es continuo, sin fechas de corte (`arquitectura_final_embudo.md`, decisión 1). La gente entra cualquier día, así que un contenido secuenciado "Día 1 → Día 15" publicado *en el grupo* le llega a destiempo a casi todos.
+
+**La separación correcta —y la infraestructura ya existe:**
+
+- **Secuencia personalizada por hitos** (Días 1, 3, 7, 10, 13, 15) → **Manychat, 1 a 1**. Ya está construida en `flujos_automatizacion.md`. Es 100% automatizable.
+- **El grupo** → solo contenido *evergreen*, que sirve igual a quien entró ayer y a quien entró hace diez días.
 
 Sin esta separación el grupo se vuelve confuso y la gente lo silencia en 48 horas.
 
-### Contenido y frecuencia
+### Estructura del grupo
 
-| Pieza | Frecuencia | Nota |
-|---|---|---|
-| **Kit de Bienvenida fijado** — Manual + checklist + calculadora de riesgo | Permanente | El Material Complementario del Manual vive acá |
-| **Micro-tutorial evergreen** (instalación, dónde ver la alerta, qué temporalidad) | 3x semana | Responde literalmente las dudas que la encuesta recogió: *"dificultades técnicas"*, *"ni lo he usado"* |
-| **"Tu primera operación"** — invitación a avisar cuando la hagan | 2x semana | Convierte un hito privado en un momento social. Es el evento que define si el trial convierte o no |
-| **Q&A abierto** — Meli responde dudas técnicas | Diario, en las ventanas de sesión | Ya está en el protocolo de `procesos_manuales.md` §3.1 |
-| **Encuesta de activación** (ver §5) | 1x semana | El instrumento de detección más importante de los tres grupos |
-| **Contrato del Trader Synapse** (Módulo 8 del Manual) | Al cerrar el onboarding | Compromiso simbólico: funciona como dispositivo de compromiso, no como trámite |
+| Elemento | Contenido | Frecuencia | Auto / Manual |
+|---|---|---|---|
+| **Mensaje fijado** | Kit de Bienvenida: Manual + checklist + calculadora de riesgo + índice de videos del school | Permanente | Manual (una vez) |
+| **Videos del school** | Uno por bloque temático, incrustados de forma progresiva | 2x semana | Manual · contenido pre-producido |
+| **Micro-tutorial evergreen** | Instalación, dónde ver la alerta, qué temporalidad, cómo leer el SL/TP | 3x semana | Manual · **se produce una vez y se recicla en cada cohorte** |
+| **Señales en tiempo real** | Las dos sesiones | Cuando existan | Manual |
+| **"Tu primera operación"** | Invitación a avisar cuando la hagan | 2x semana | Manual |
+| **Q&A abierto** | Meli responde dudas técnicas en las ventanas de sesión | Diario | Manual — ya en `procesos_manuales.md` §3.1 |
+| **Encuesta de activación** | Ver §6 | 1x semana | Manual publicar · **auto la acción** |
+| **Contrato del Trader** | Módulo 8 del Manual | Cierre del onboarding | Manual |
 
-**Total: ~6 toques por semana.** Más intenso que los otros dos a propósito: la ventana son 15 días y el costo de no activarse es perder al usuario entero.
+**Punto clave sobre las señales:** recomiendo que el trial **sí** reciba alertas en tiempo real. El **61% de la audiencia (20 de 33) eligió "recibir las alertas con el riesgo exacto en $USD en el celular" como el atributo más valioso del producto** [DATO — `synapse_messaging_bible.md` §4]. Es el diferencial #1 y ningún competidor lo ofrece completo. Un trial que no lo demuestra, no demuestra el producto. Publicar la misma señal en dos grupos es un copy-paste adicional, costo operativo despreciable.
 
-### Salida del grupo
+### Mejoradores de conversión
 
-Al vencer el trial, el usuario sale del Grupo 3 y del Grupo 1, y **permanece en el Grupo 2**. Así nadie queda fuera del ecosistema por no haber comprado todavía: sigue viendo prueba social y educación, que es exactamente lo que puede convertirlo más adelante. Se agrega al mismo barrido semanal que ya existe, sin proceso nuevo.
+1. **El hito que define todo: una operación completa vivida.** Si en 15 días la persona no vio al menos una operación de principio a fin —entrada, TP1, break-even automático moviendo el stop, TP2—, no conectó con el producto, vio una demo. Todo el grupo debería estar diseñado alrededor de que ese hito ocurra. Es el "momento de sí" real.
+
+2. **Celebrar públicamente cada primera operación.** Convierte un hito privado en evidencia social, y le muestra al que todavía no arrancó que gente como él ya lo hizo. Es el mejor antídoto contra la fricción de activación.
+
+3. **Progreso visible de cohorte.** "Vas por el día 7 de 15" — la ventana es corta y hacerla consciente crea urgencia real, sin inventarla.
+
+4. **La oferta llega al final, no al principio.** Días 13-15, después de que ya conectó. Ofertar el día 2 rompe la promesa del grupo ("te ayudo a usarlo bien") y quema la confianza justo cuando se está construyendo.
+
+5. **Los videos del school como escalera, no como biblioteca.** Entregar 20 videos el día 1 abruma y nadie ve ninguno. Uno cada dos días, cada uno resolviendo el problema que le toca a esa altura del trial.
+
+### Administración
+
+- **Entrada:** automática. Manychat entrega el link 1 a 1 al detectar tag `trial_activo`. Ya construido.
+- **Durante:** publicación manual desde una checklist corta (ver §7), con contenido pre-producido en lote.
+- **Salida:** al vencer el trial, sale del Grupo 1 y del Grupo 3, y entra al Grupo 2. La detección es automática (Make Escenario 3 ya escanea vencimientos a diario); la remoción del grupo es manual, en el barrido semanal que ya existe para revocar TradingView.
 
 ---
 
-## 5. La encuesta semanal — una por grupo, cada una con un trabajo distinto
+## 4. Grupo 2 · Sala de Testimonios (trial vencido · no-recompra)
 
-La clave: **la encuesta no es relleno de engagement, es un instrumento de medición.** Cada una devuelve un dato que hoy no tenemos y que dispara una acción concreta.
+**Pregunta:** *"¿Qué me estoy perdiendo?"*
+**Quién entra:** quien terminó el trial sin comprar, y quien no renovó.
+**Regla dura:** cero señales en tiempo real, siempre. Solo resultados ya cerrados.
 
-| Grupo | Día | Pregunta | Opciones | Qué se hace con la respuesta |
+### Sobre el FOMO: cuál funciona y cuál rompe la marca
+
+El objetivo es demanda acumulada, y eso es legítimo. Pero hay que separar dos cosas que se parecen y no son iguales:
+
+- ✅ **FOMO real:** mostrar lo que efectivamente está pasando. Otros operando, otros sosteniendo su proceso, otros construyendo. La sensación de quedarse afuera la produce **la evidencia**, no el anuncio.
+- ❌ **Urgencia fabricada:** cupos inventados, "últimas horas", contadores falsos. Está prohibido por los compromisos de marca y, en un grupo compuesto **específicamente por gente que ya dijo que no**, es contraproducente: son la audiencia más escéptica que tenés. Un truco detectado en este grupo no solo no convierte, cierra la puerta para siempre.
+
+### El problema con "solo experiencias positivas"
+
+Un muro de únicamente ganancias trabaja en contra del objetivo del propio Manual, que arranca diciendo que los usuarios obtienen resultados distintos con las mismas señales y concluyen que el indicador falla. Un feed de puros wins **produce** esa conclusión: el usuario ve solo aciertos, recuerda su propia pérdida durante el trial, y decide que el producto no funciona para él. En una audiencia que ya no compró, ese es exactamente el pensamiento que hay que desarmar.
+
+**La estructura correcta son tres tipos de contenido, no uno:**
+
+| Tipo | Qué muestra | Frecuencia |
+|---|---|---|
+| **Testimonio de resultado** | Operación cerrada, con disclaimer y permiso | 1x semana |
+| **Testimonio de proceso** | *"Volví a seguir mi plan"* — lo que la investigación encontró como lo más valioso para el usuario, por encima de "gané dinero" | 1x semana |
+| **Una pérdida bien gestionada** | Con su riesgo pre-definido: $16, aceptado antes de entrar | 1x mes |
+
+La pérdida bien gestionada es contraintuitiva pero es el activo de confianza más fuerte que tiene la marca, y ningún competidor lo hace. En este grupo específicamente, es lo que responde la objeción silenciosa que todos tienen: *"a mí me tocó perder"*.
+
+### Estructura y frecuencia
+
+| Día | Pieza | Auto / Manual |
+|---|---|---|
+| Lunes | Resultado de la semana anterior (ya cerrado) | Manual |
+| Martes | Pieza educativa — serie autosabotaje (`synapse_serie_autosabotaje_prompts.md`) | Manual · ya producida |
+| Miércoles | Testimonio (rotando resultado / proceso) | Manual |
+| Viernes | Anuncio de clase en vivo — **abierta a este grupo** | Manual |
+| 1x mes | "Así se ve una pérdida bien gestionada" | Manual |
+| **Días 1-3 y 13-17** | **Ventana de reactivación**: oferta explícita | Semi-auto (ver abajo) |
+
+**Total: 4 publicaciones por semana.** Fuera de las ventanas de quincena, máximo 1 mención suave de oferta por semana.
+
+### Mejoradores de conversión
+
+1. **Las ventanas de quincena son el motor de este grupo.** Días 1-3 y 13-17, sincronizadas con la liquidez del cliente (`arquitectura_final_embudo.md`, decisión 4). Es la única audiencia del ecosistema donde la oferta directa y sostenida tiene sentido: ya conocen el producto, la barrera es decisión, no información.
+
+2. **La oferta se dispara 1 a 1, no en el grupo.** Acá está el mayor apalancamiento de automatización de todo el sistema: Make ya sabe quién tiene tag `trial_vencido`, y Manychat puede enviarles la oferta individualmente en la ventana de quincena. Automatizable al 100% hoy, sin infraestructura nueva. El grupo sostiene el clima; el 1 a 1 cierra.
+
+3. **Acceso a la clase en vivo.** Que sigan viendo el valor en directo, no solo en capturas. Es el recordatorio más honesto de lo que se están perdiendo.
+
+4. **Encuesta de objeciones** (§6). Este grupo es la única fuente real de la respuesta a *"¿por qué no compraste?"*, una brecha declarada y nunca cerrada (`synapse_messaging_bible.md` §16).
+
+### Administración
+
+**Recomendación: montarlo como Canal de WhatsApp, no como grupo** (ver §2). Es unidireccional por naturaleza, escala sin límite, no genera moderación ni solicitudes falsas, y el usuario lo puede dejar de seguir sin el costo social de salirse de un grupo — lo que reduce la fricción de entrada.
+
+Si se mantiene como grupo, la regla es: solo administradores publican.
+
+---
+
+## 5. Grupo 3 · Sala de Operación (clientes con plan activo)
+
+**Pregunta:** *"¿Qué hago ahora?"*
+**Estado emocional:** pagó, y quiere que le demuestren que valió la pena.
+**Riesgo principal:** que el silencio de los días sin señal se lea como abandono.
+
+### Estructura y frecuencia
+
+| Momento | Pieza | Frecuencia | Auto / Manual |
+|---|---|---|---|
+| Sesión NY y Asia | **Señal**: entrada, SL 160 pips ($16), TP1, TP2, break-even | Cuando exista | Manual |
+| Al cerrar | **Resultado**, ganada o perdida, como *respuesta* a la señal | Por operación | Manual |
+| Día sin señal | **"Hoy no hubo alerta"** explícito | Cada día que aplique | Manual |
+| Lunes | **Recap semanal** con números reales | 1x semana | Manual ⚠️ |
+| Miércoles | **Recordatorio de disciplina** — un error del Módulo 5, rotando | 1x semana | Manual · pre-producido |
+| Fin de semana | **Clase en vivo** | 1x semana | Manual |
+| Jueves | **Encuesta de proceso** (§6) | 1x semana | Manual publicar · auto la acción |
+
+⚠️ El recap de los lunes queda bloqueado hasta reconciliar las métricas (`synapse_messaging_bible.md` §6).
+
+**El "hoy no hubo alerta" no es relleno.** Sin él, el silencio parece abandono y el cliente que pagó empieza a preguntarse si el producto sirve. Con él, ataca directamente la sobre-operativa (27.3% de la encuesta): *si no hay alerta, no hay operación, y eso también es el sistema funcionando*.
+
+### Dos reglas mecánicas para que la señal no se pierda
+
+En WhatsApp, un grupo con señales **y** conversación libre hace que las alertas se entierren entre mensajes. Es el fallo de experiencia más común en grupos de señales, y en un grupo de clientes que pagan es directamente causa de cancelación.
+
+1. **Cada señal se fija (pin)** al publicarse.
+2. **El resultado se publica como respuesta (reply) al mensaje original de la señal**, nunca suelto. El hilo entrada → resultado queda trazable aunque haya ruido.
+
+La alternativa —solo administradores— protege la señal pero mata la comunidad, que es parte de lo que se vendió. Pin + reply da casi todo el beneficio sin ese costo.
+
+### Mensaje fijado permanente
+
+El **Checklist Antes de Operar** (Módulo 7 del Manual): lo que el usuario necesita a un toque de distancia en el momento exacto de ejecutar.
+
+### Mejoradores de conversión y retención
+
+1. **La retención se gana con proceso, no con más señales.** Un cliente que sigue su plan y pierde renueva; uno que gana rompiendo el plan, no. La encuesta de proceso de los jueves es el instrumento central de esto.
+
+2. **Escalera STANDARD → PRO → PREMIUM.** El upsell nativo en checkout ya está disponible (`monetizacion_hotmart.md`) y no requiere producto nuevo: los planes son acumulativos. El grupo es donde se hace visible qué hay en el nivel de arriba.
+
+3. **El cliente satisfecho como canal de adquisición.** Mencionar el programa de embajadores acá convierte retención en captación sin costo de pauta.
+
+4. **Aviso de renovación anticipado, 1 a 1.** Make Escenario 3 ya detecta vencimientos. Que la renovación llegue como recordatorio útil y no como corte de servicio.
+
+---
+
+## 6. La encuesta semanal — una por grupo, cada una con un trabajo distinto
+
+**La encuesta no es relleno de engagement: es un instrumento de medición.** Cada una devuelve un dato que hoy no existe y dispara una acción concreta y automatizable.
+
+| Grupo | Día | Pregunta | Opciones | Acción que dispara |
 |---|---|---|---|---|
-| **1 · Sala de Operación** | Jueves | *"En tus últimas 5 operaciones, ¿respetaste tu plan?"* | 🟢 Las 5 · 🟡 Algunas · 🔴 Ninguna | Mide **proceso, no resultado** — coherente con la filosofía de la marca. Quien responde 🔴 dos semanas seguidas recibe contacto 1 a 1 antes de que abandone |
-| **2 · Comunidad** | Jueves | *"¿Qué es lo que más te frena hoy?"* | Opciones rotativas de objeciones reales | Cierra una brecha abierta declarada: **nunca se validaron las objeciones con usuarios reales** (`synapse_messaging_bible.md` §16). Las respuestas más repetidas se responden públicamente la semana siguiente |
-| **3 · Punto de Partida** | Martes | *"¿Ya hiciste tu primera operación con Synapse?"* | ✅ Sí · ⏳ Todavía no · ❓ Tengo una duda técnica | **El instrumento más valioso del sistema.** Identifica por nombre y apellido quién está dentro del 45% que no se activa, mientras todavía hay tiempo de rescatarlo. Cada ⏳ y cada ❓ dispara contacto 1 a 1 de Meli ese mismo día |
+| **1 · Punto de Partida** | Martes | *"¿Ya hiciste tu primera operación con Synapse?"* | ✅ Sí · ⏳ Todavía no · ❓ Tengo una duda técnica | **El instrumento más valioso del sistema.** Identifica con nombre y apellido a quién está dentro del 45% que no se activa, **mientras todavía queda trial por delante**. Cada ⏳ y cada ❓ dispara contacto 1 a 1 de Meli ese mismo día |
+| **2 · Testimonios** | Jueves | *"¿Qué es lo que más te frena hoy?"* | Objeciones rotativas | Cierra una brecha declarada: nunca se validaron las objeciones con usuarios reales. Las respuestas más repetidas se responden públicamente la semana siguiente, y alimentan el copy de las ventanas de quincena |
+| **3 · Sala de Operación** | Jueves | *"En tus últimas 5 operaciones, ¿respetaste tu plan?"* | 🟢 Las 5 · 🟡 Algunas · 🔴 Ninguna | Mide **proceso, no resultado**. Quien responde 🔴 dos semanas seguidas recibe contacto 1 a 1 antes de que abandone — es señal temprana de cancelación |
 
-La encuesta del Grupo 3 convierte un problema que hoy se detecta tarde —o no se detecta— en una lista accionable cada semana. Ese solo cambio justifica la existencia del grupo.
-
----
-
-## 6. Cómo el Manual alimenta los 3 grupos
-
-El Manual no es un PDF que se entrega y se archiva: **es el calendario de contenido de los tres grupos.** Cada módulo tiene un lugar de residencia y una frecuencia de reaparición.
-
-| Módulo del Manual | Dónde vive | Cómo reaparece |
-|---|---|---|
-| 1. Bienvenida · 2. Qué es y qué NO es | Grupo 3, fijado | Base del Kit de Bienvenida |
-| 3. Gestión del Riesgo | Grupo 3 (aprendizaje) + Grupo 1 (refuerzo) | Recordatorio de disciplina de los miércoles |
-| 4. Interpretación de Estadísticas | Grupo 2 | Acompaña cada recap de resultados — enseña a leerlos sin falsas expectativas |
-| 5. Los 7 Errores Frecuentes | Grupos 1 y 2 | **Ya está construido:** la serie de 6 piezas de `synapse_serie_autosabotaje_prompts.md` cubre justamente estos errores |
-| 6. Casos Prácticos (Trader A / Trader B) | Grupo 1 | Formato natural para el contenido del miércoles |
-| 7. Checklist Antes de Operar | Grupo 1, fijado | Consulta permanente en el momento de ejecutar |
-| 8. Contrato del Trader | Grupo 3 | Cierre del onboarding |
+La publicación de la encuesta es manual (limitación de §2), pero **la lectura y la acción sí se automatizan**: las respuestas se vuelcan a `DB_Usuarios` y Make dispara la intervención. Ese es el patrón general de todo este documento — **manual para publicar, automático para actuar**.
 
 ---
 
-## 7. Dos cosas del Manual que hay que corregir antes de publicarlo
+## 7. Tabla maestra de automatización
 
-Ambas están en el **Módulo 3 (Gestión del Riesgo)** y van a ser leídas por cada usuario nuevo, así que conviene resolverlas antes de que el documento circule.
+Qué está construido, qué falta, y qué no se puede automatizar por diseño.
 
-### 7.1 El riesgo por operación no cuadra con la cifra oficial de la marca
+| Disparador | Acción | Herramienta | Estado |
+|---|---|---|---|
+| Reclama trial | Crear fila + tag `trial_activo` | Make Esc. 1 | ✅ Construido |
+| Tag `trial_activo` | Enviar link del Grupo 1, 1 a 1 | Manychat | 🔧 Ajuste menor: agregar el link al mensaje de Día 1 |
+| Días 1/3/7/10/13/15 | Secuencia de hitos del trial | Manychat | ✅ Construido |
+| Encuesta: responde ⏳ o ❓ | Avisar a Meli para contacto 1 a 1 | Make + Sheets | ⬜ Por construir — **máxima prioridad** |
+| Día 13 del trial | Enviar la oferta, 1 a 1 | Manychat | ⬜ Por construir |
+| Trial vence sin compra | Tag `trial_vencido` + mover a Grupo 2 | Make Esc. 3 (detección) | ✅ Detección construida · remoción del grupo manual |
+| Compra | Tag `cliente_activo` + link Grupo 3 + avisar admin | Make Esc. 2 | ✅ Construido |
+| Ventana quincena (1-3, 13-17) | Campaña de oferta a `trial_vencido`, 1 a 1 | Manychat | ⬜ Por construir — **mayor apalancamiento del Grupo 2** |
+| Membresía por vencer | Recordatorio de renovación | Make Esc. 3 | ✅ Construido |
+| **Publicar en cualquier grupo** | — | — | ❌ **No automatizable** (§2). Checklist manual diaria |
 
-El Módulo 3 plantea: *cuenta de 320 USD, operar 0.01, riesgo aproximado 16 USD por operación.*
+### La checklist diaria de administración (lo único verdaderamente manual)
 
-Pero la estructura de alerta oficial de Synapse documenta **riesgo de $3.50 por 0.01 lotes** en XAUUSD, y esa cifra es consistente (0.01 lote = 1 onza; un stop de 3.50 puntos de precio = $3.50 de riesgo). Para arriesgar $16 con 0.01 lotes haría falta un stop de 1600 puntos, muy lejos de lo que opera el indicador en M15.
+Todo el contenido se pre-produce en lote una vez por semana. La ejecución diaria queda en:
 
-Los $16 parecen venir de calcular el 5% de una cuenta de $320 — pero **5% por operación es un riesgo agresivo**, que contradice el mensaje de gestión conservadora del propio manual. Hay que decidir cuál de las dos cifras es la real y alinear todo el módulo, porque hoy se contradicen entre sí.
+1. Publicar señales de las dos sesiones en Grupos 1 y 3 · fijar cada una.
+2. Publicar resultado como respuesta a cada señal.
+3. Si no hubo señal, publicar el aviso de "hoy no hubo alerta".
+4. Publicar la pieza del día que corresponda al calendario de cada grupo.
+5. Responder Q&A en las ventanas de sesión.
 
-### 7.2 "Ganancia estimada: 80 USD mensuales" no puede ir en el manual
-
-Son **$80 sobre una cuenta de $320 = 25% mensual**, impreso en el documento oficial de bienvenida que recibe todo usuario nuevo.
-
-Esto viola directamente el compromiso #4 de la marca (*nunca prometer rentabilidades garantizadas*) y expone al negocio: es una proyección de rendimiento entregada por escrito a un cliente que paga. Además contradice el objetivo declarado del propio manual, que es *"evitar falsas expectativas"* (Módulo 4).
-
-**Alternativa:** reemplazar la proyección de ganancia por el dato que sí es verificable y sí es útil — **cuánto arriesga por operación y cuántas operaciones soporta su cuenta**. Eso es gestión de riesgo real. La ganancia no se proyecta: se reporta después, con números reales.
+Realista: **15-20 minutos al día**, más un bloque semanal de producción de contenido.
 
 ---
 
-## 8. Próximos pasos
+## 8. Próximos pasos, por orden de impacto
 
-1. **Resolver la Decisión A** (§1): ¿el trial entra a la Sala de Operación? Define si el trial demuestra o no el diferencial #1 del producto.
-2. **Corregir el Módulo 3 del Manual** (§7) antes de que el documento circule.
-3. **Montar el Grupo 3 primero.** De los tres es el único que ataca una fuga ya medida (~45%) con cero infraestructura nueva. Los otros dos ya existen en alguna forma; este no existe y es el que más pesa.
-4. Activar las tres encuestas semanales desde la primera semana — son el mecanismo de menor esfuerzo y mayor retorno de todo el planteamiento.
-5. Reconciliar las métricas pendientes (`synapse_messaging_bible.md` §6) para poder publicar el recap de los lunes en los Grupos 1 y 2.
+1. **Construir la automatización de la encuesta del Grupo 1** (⏳/❓ → aviso a Meli). Es el único mecanismo que ataca la fuga del 45% mientras todavía hay tiempo de rescatar a la persona. Máxima prioridad de todo el documento.
+2. **Montar el Grupo 1** con el Kit de Bienvenida fijado y los primeros videos del school.
+3. **Corregir el Módulo 3 del Manual** (§0): invertir la tabla de capital y quitar la proyección de $80 mensuales.
+4. **Decidir si el Grupo 2 va como Canal** (recomendado) o como grupo.
+5. **Construir la campaña de quincena 1 a 1** para `trial_vencido` — es el motor de conversión del Grupo 2 y es 100% automatizable con lo que ya existe.
+6. **Propagar el marco de 160 pips / $16 / 2R** a `indicador_synapse.md`, `synapse_messaging_bible.md` y la skill `synapse-escenarios`.
+7. Reconciliar las métricas pendientes para desbloquear el recap de los lunes.
