@@ -22,13 +22,26 @@
 | TP2 | 320 totales | **$32** (2R) |
 | Break-even | Al alcanzar TP1 | Riesgo pasa a $0 |
 
-### Distribución de los cierres ganadores
+### Las dos estrategias
 
-De las operaciones que ganan: **60% cierran en TP1** ($16) y **40% corren hasta TP2** ($32).
+El cliente **elige una y la sostiene**. No se mezclan. Existen dos porque muchas operaciones tocan TP1, se devuelven y terminan en stop loss.
 
-De ahí sale el número más útil para explicar el sistema: **una operación ganadora promedio deja $22,40** (0,6 × $16 + 0,4 × $32). Contra un riesgo de $16, eso es un **1,4R efectivo**, no el 2R teórico del TP2. Es el número honesto y es el que conviene usar en el manual y en los grupos, porque describe lo que realmente pasa.
+| | **Estrategia TP1** | **Estrategia TP2** |
+|---|---|---|
+| Cierra en | 160 pips | 320 pips |
+| Ganancia por acierto | $16 | $32 |
+| Win rate | **60%** | **40%** |
+| Cada 10 operaciones | 6 ganadas · 4 perdidas | 4 ganadas · 6 perdidas |
+| Resultado | +$96 − $64 = **+$32** | +$128 − $96 = **+$32** |
 
-> ⚠️ **Cuidado al comunicarlo:** este 60/40 es la distribución *entre las ganadoras*, no un porcentaje de aciertos. Dicho como "de 10 operaciones ganamos 6 en TP1 y 4 en TP2" se lee como un 100% de efectividad, que no es lo que significa. La fórmula segura es: *"de cada 10 operaciones ganadoras, 6 cierran en TP1 y 4 llegan a TP2"*. El win rate es otro número y vive en las métricas pendientes de reconciliar (`synapse_messaging_bible.md` §6).
+**Las dos dejan exactamente lo mismo: +$32 cada 10 operaciones**, o sea 2 operaciones de margen. La diferencia no está en el dinero, está en lo que cada una le exige a la persona:
+
+- **TP1** gana más seguido (6 de 10). Emocionalmente sostenible.
+- **TP2** gana el doble por acierto, pero pierde 6 de 10 y con rachas perdedoras más largas. Exige mucho más aguante.
+
+**El peor resultado posible es elegir TP2 y abandonarla a mitad de camino:** te comés las pérdidas de TP2 sin quedarte para cobrar sus ganancias. Este es el punto educativo más importante de todo el sistema.
+
+> ⚠️ **Cuidado al comunicarlo:** nunca decir "60%" a secas. Sin decir a qué estrategia pertenece, un 60% y un 40% mencionados juntos se leen como un 100% de efectividad. La fórmula segura siempre nombra la estrategia: *"operando a TP1, 6 de cada 10 operaciones son ganadoras"*.
 
 ### Capital de entrada
 
@@ -40,7 +53,9 @@ El riesgo por operación es **fijo en $16** porque 0.01 es el lote mínimo: no s
 | **$500** | $16 | 3,2% | 31 |
 | **$1.000** | $16 | 1,6% | 62 |
 
-**Cómo se comunica:** $160 es el **mínimo para empezar**, no el recomendado. Decirlo así es honesto y además vende mejor — muestra que la barrera de entrada es baja *y* que hay un camino de crecimiento, en vez de dar a entender que $160 es lo óptimo.
+**Cómo se comunica:** $160 es el **mínimo para empezar**, no el recomendado. Decirlo así es honesto y además vende mejor — muestra barrera de entrada baja *y* camino de crecimiento.
+
+**Capital y estrategia van juntos:** TP2 pierde 6 de cada 10 y con rachas más largas, así que exige más colchón. Con $160, la estrategia natural de arranque es **TP1**; TP2 encaja mejor a partir de $500.
 
 ---
 
@@ -86,9 +101,9 @@ El trial es continuo, sin fechas de corte. La gente entra cualquier día, así q
 |---|---|---|
 | Lunes | **Instalación** | Micro-tutorial: cómo dejarlo andando en TradingView |
 | Martes | **Lectura de la alerta** | Qué significan SL 160 pips / $16, TP1, TP2, break-even |
-| Miércoles | **Primera operación** | Invitación a dar el paso + celebración de quienes ya la hicieron |
-| Jueves | **Gestión** | Por qué no se mueve el stop · el riesgo se aceptó al entrar |
-| Viernes | **Proceso** | Cómo se lee un resultado, ganado o perdido |
+| Miércoles | **Elegí tu estrategia** | TP1 o TP2: las dos dejan lo mismo, exigen distinto (§0) |
+| Jueves | **Primera operación** | Invitación a dar el paso + celebración de quienes ya la hicieron |
+| Viernes | **Gestión y proceso** | Por qué no se mueve el stop · cómo se lee un resultado, ganado o perdido |
 | Fin de semana | **Ecosistema** | Clase en vivo + video del school |
 
 ### El hito que define todo
@@ -214,7 +229,7 @@ El **Checklist Antes de Operar** (Módulo 7 del Manual): lo que el usuario neces
 
 1. **La retención se gana con proceso, no con más señales.** Un cliente que sigue su plan y pierde renueva; uno que gana rompiendo el plan, no. La encuesta de los jueves es el instrumento central de esto.
 
-2. **Enseñar a leer el 1,4R.** El cliente que espera 2R en cada operación se frustra cuando el 60% cierra en TP1. Explicar la distribución real desde el principio previene la sensación de "el indicador no rinde lo que prometió" — que es la causa #1 de cancelación temprana.
+2. **Que cada cliente declare su estrategia y la sostenga.** Es el mejorador de retención más fuerte que tiene el grupo. Quien elige TP2 y la abandona tras una racha de pérdidas se lleva lo peor de las dos: las pérdidas de TP2 sin sus ganancias, y concluye que el indicador no sirve. Que cada uno diga cuál eligió —y que el grupo lo recuerde— convierte una decisión privada en un compromiso público.
 
 3. **Escalera STANDARD → PRO → PREMIUM.** Los planes son acumulativos; el grupo es donde se hace visible qué hay en el nivel de arriba, sin empujar.
 
@@ -239,5 +254,5 @@ Una por grupo, cada una con un trabajo distinto. **No es relleno de engagement: 
 1. **Montar el Grupo 1** con el Kit de Bienvenida fijado y el ciclo semanal de §2. Es el que ataca la fuga más grande.
 2. **Producir en lote el ciclo semanal evergreen** del Grupo 1 — se hace una vez y sirve para todas las cohortes.
 3. **Corregir el Módulo 3 del Manual**: incorporar la tabla de capital ($160 / $500 / $1.000) y quitar la línea *"Ganancia estimada: 80 USD mensuales"*, que es una proyección de rentabilidad y choca con el compromiso de no prometerlas.
-4. **Definir el redactado del 60/40** para que en ningún material se lea como un 100% de efectividad (§0).
+4. **Fijar el redactado de los win rates**: nunca "60%" a secas, siempre nombrando la estrategia (§0).
 5. Reconciliar las métricas pendientes para desbloquear el recap de los lunes.
