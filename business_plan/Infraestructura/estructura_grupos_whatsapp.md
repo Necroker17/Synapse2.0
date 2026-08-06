@@ -100,44 +100,73 @@ Nadie sale del ecosistema por no haber comprado: sale del Grupo 1 y cae en el Gr
 **Duración:** los 15 días del trial. Cohorte rotativa.
 **Objetivo:** que al terminar, la persona esté conectada con el ecosistema y quiera comprar.
 
-**Es el grupo de mayor apalancamiento del negocio.** Cerca del **45% de los registrados no llega a operar la herramienta dentro de la ventana de prueba** [DATO — `synapse_messaging_bible.md` §6], y hoy no existe ninguna pieza de comunicación para ese momento. Es la fuga más grande del embudo, completamente desatendida.
+**Es el grupo de mayor apalancamiento del negocio.** Cerca del **45% de los registrados no llega a operar la herramienta dentro de la ventana de prueba** [DATO — `synapse_messaging_bible.md` §6]. Es la fuga más grande del embudo.
 
-### El problema estructural: la cohorte rota
+### La división: el manual enseña, el grupo acompaña
 
-El trial es continuo, sin fechas de corte. La gente entra cualquier día, así que **un contenido secuenciado "Día 1 → Día 15" publicado en el grupo le llega a destiempo a casi todos.** Quien entra un jueves cae en mitad de una conversación que no entiende.
+La formación **no vive en el grupo, vive en el Manual** (`synapse_manual_estructura.md`), que la persona recibe al instalar el indicador y recorre a su propio ritmo. Más adelante migra al school.
 
-**La solución: el grupo corre en ciclo semanal, no en secuencia de 15 días.** Cada semana recorre el arco completo del onboarding, así que quien entra cualquier día ve el ciclo entero dentro de sus primeros 7 días, y lo ve **dos veces** a lo largo del trial — la primera para aprender, la segunda para reforzar.
+Esto resuelve de raíz el problema de la cohorte rotativa: como el trial es continuo y la gente entra cualquier día, cualquier currículo publicado en el grupo le llega a destiempo a casi todos. El manual es autoguiado — **cada persona empieza en su paso 1 sin importar qué día entró**.
 
-| Día | Bloque del ciclo | Contenido |
-|---|---|---|
-| Lunes | **Instalación** | Micro-tutorial: cómo dejarlo andando en TradingView |
-| Martes | **Lectura de la alerta** | Qué significan SL 160 pips / $16, TP1, TP2, break-even |
-| Miércoles | **Elige tu estrategia** | TP1 o TP2 · y si usas break-even o no (§0) |
-| Jueves | **Primera operación** | Invitación a dar el paso + celebración de quienes ya la hicieron |
-| Viernes | **Gestión y proceso** | Por qué no se mueve el stop · cómo se lee un resultado, ganado o perdido |
-| Fin de semana | **Ecosistema** | Clase en vivo + video del school |
+Con la enseñanza afuera, al grupo le quedan tres trabajos y ninguno es enseñar:
+
+| Trabajo | Cómo se cumple |
+|---|---|
+| **Presencia** — que se note que el sistema está vivo | Alerta de apertura de sesión + señales + resultados |
+| **Sostén** — que aguante emocionalmente lo que va a sentir | Mensajes de mentalidad |
+| **Rescate** — detectar a quien no arranca | Encuesta de activación + contacto 1 a 1 |
+
+### El ritmo lo pone el mercado, no un calendario
+
+El grupo ya tiene una estructura diaria natural que no hay que inventar:
+
+| Hora | Pieza |
+|---|---|
+| **7:00** | Apertura NY — *"el indicador empezó a buscar oportunidad"* |
+| Durante | Señal, si aparece · resultado como respuesta a la señal |
+| **18:00** | Apertura Asia — *"el indicador empezó a buscar oportunidad"* |
+| Durante | Señal, si aparece · resultado como respuesta a la señal |
+
+**La alerta de apertura de sesión es más valiosa de lo que parece.** Hace tres cosas a la vez: confirma que el sistema está trabajando aunque no haya señal, le da al grupo un latido dos veces al día, y genera expectativa. Resuelve sola el problema de que el silencio se lea como abandono — sin ella, un día sin señal parece un día sin producto.
+
+Si termina la sesión sin señal, se cierra explícitamente: *"cerramos sin alerta. Sin señal no hay operación, y eso también es el sistema funcionando."*
+
+### Los mensajes de mentalidad: cuándo y de qué
+
+**Cuándo: pegados a la apertura de sesión, 3 veces por semana.** No sueltos en cualquier momento. Justo después de la apertura es cuando la persona está por decidir, y de ahí que el mensaje funcione como prevención y no como reflexión tardía.
+
+**De qué: un banco rotativo, no una secuencia.** Igual que con el manual, un mensaje que asume "vas por el día 8" le llega mal a quien entró ayer. Estos ocho funcionan en cualquier día del trial:
+
+1. La pérdida ya estaba contemplada. El riesgo se aceptó al entrar.
+2. Sin alerta no hay operación. El silencio también es información.
+3. Cerrar la ganadora antes de tiempo es no creértela.
+4. Mover el stop es decidir dos veces la misma cosa.
+5. Tu cuerpo decide antes de que llegue tu análisis.
+6. La urgencia distorsiona la decisión, no la acelera.
+7. Una operación no evalúa un sistema.
+8. Elegiste una estrategia. Sosténla.
+
+Rotando 3 por semana, nadie ve una repetición dentro de sus 15 días.
 
 ### El hito que define todo
 
-**Una operación completa vivida.** Si en 15 días la persona no vio una operación de principio a fin —entrada, recorrido, cierre en TP o en stop—, no conectó con el producto: vio una demo. Todo el grupo debe estar diseñado alrededor de que ese hito ocurra, y ocurra temprano.
+**Una operación completa vivida.** Si en 15 días la persona no vio una operación de principio a fin —entrada, recorrido, cierre en TP o en stop—, no conectó con el producto: vio una demo.
 
 Por eso las señales en tiempo real **sí** deben entrar a este grupo. El **61% de la audiencia (20 de 33) eligió "recibir las alertas con el riesgo exacto en $USD en el celular" como el atributo más valioso del producto** [DATO — `synapse_messaging_bible.md` §4]. Es el diferencial #1. Un trial que no lo demuestra, no demuestra el producto.
 
 ### Mejoradores de uso
 
-1. **Ritual de entrada.** Cada persona nueva recibe un saludo con nombre y una sola instrucción: *"empieza por el mensaje fijado"*. En un grupo de cohorte rotativa, sin ritual de entrada la gente se siente intrusa y se queda en silencio los 15 días.
+1. **Ritual de entrada.** Saludo con nombre y una sola instrucción: *"empieza por el mensaje fijado"*, más la pregunta que abre el diagnóstico: *"¿ya tienes el indicador instalado?"* Sin ritual de entrada, en cohorte rotativa la gente se siente intrusa y se queda en silencio los 15 días.
 
-2. **Kit de Bienvenida fijado**, con índice numerado: Manual → checklist → calculadora de riesgo → videos del school. Numerado, no como lista suelta: el usuario necesita saber cuál es el paso 1.
+2. **El manual entregado al instalar, no al registrarse.** Llega en el momento de máxima intención — la persona ya tiene el indicador en pantalla y quiere usarlo. Entregado antes, se archiva sin abrir.
 
-3. **Los videos del school como escalera, no como biblioteca.** Entregar 20 videos el día 1 abruma y nadie ve ninguno. Uno cada dos días, cada uno resolviendo el problema que le toca a esa altura del trial.
+3. **Celebrar públicamente cada primera operación.** Convierte un hito privado en evidencia social y le muestra al que todavía no arrancó que alguien como él ya lo hizo. Es el mejor antídoto contra la fricción de activación.
 
-4. **Celebrar públicamente cada primera operación.** Convierte un hito privado en evidencia social y le muestra al que todavía no arrancó que alguien como él ya lo hizo. Es el mejor antídoto contra la fricción de activación.
+4. **Progreso visible.** *"Vas por el día 7 de 15."* La ventana es corta; hacerla consciente crea urgencia real sin inventarla.
 
-5. **Progreso visible.** "Vas por el día 7 de 15." La ventana es corta; hacerla consciente crea urgencia real sin inventarla.
+5. **La oferta llega al final, no al principio.** Días 13-15, después de que ya conectó. Ofertar el día 2 rompe la promesa del grupo y quema la confianza justo cuando se está construyendo.
 
-6. **La oferta llega al final, no al principio.** Días 13-15, después de que ya conectó. Ofertar el día 2 rompe la promesa del grupo —*"te ayudo a usarlo bien"*— y quema la confianza justo cuando se está construyendo.
-
-7. **Contrato del Trader Synapse** (Módulo 8 del Manual) como cierre del onboarding. Funciona como dispositivo de compromiso, no como trámite.
+6. **Contrato del Trader Synapse** (último módulo del Manual) como cierre del onboarding. Es un dispositivo de compromiso, no un trámite.
 
 ### Reglas internas
 
@@ -215,7 +244,7 @@ Solo publica el equipo. Es un grupo de observación, no de conversación — y e
 | Al cerrar | **Resultado**, ganada o perdida, como *respuesta* a la señal |
 | Día sin señal | **"Hoy no hubo alerta"**, explícito |
 | Lunes | **Recap semanal** con números reales ⚠️ |
-| Miércoles | **Recordatorio de disciplina** — un error del Módulo 5, rotando |
+| Miércoles | **Recordatorio de disciplina** — un error del Módulo 8, rotando |
 | Fin de semana | **Clase en vivo** |
 | Jueves | **Encuesta de proceso** (§5) |
 
@@ -234,7 +263,7 @@ La alternativa —solo administradores— protege la señal pero mata la comunid
 
 ### Mensaje fijado permanente
 
-El **Checklist Antes de Operar** (Módulo 7 del Manual): lo que el usuario necesita a un toque de distancia en el momento exacto de ejecutar.
+El **Checklist Antes de Operar** (Módulo 10 del Manual): lo que el usuario necesita a un toque de distancia en el momento exacto de ejecutar.
 
 ### Mejoradores de retención
 
@@ -322,7 +351,7 @@ La pregunta final no es cortesía: abre la conversación 1 a 1 y detecta al que 
 **Nombre visible:** `Synapse · Sala de Operación`
 **Descripción:** Señales en vivo de las sesiones de Nueva York y Asia. Solo planes activos.
 
-**Mensaje fijado:** el **Checklist Antes de Operar** (Módulo 7 del Manual), sin adornos. Es lo que el usuario necesita a un toque de distancia en el momento de ejecutar.
+**Mensaje fijado:** el **Checklist Antes de Operar** (Módulo 10 del Manual), sin adornos. Es lo que el usuario necesita a un toque de distancia en el momento de ejecutar.
 
 **Normas (3, visibles):**
 1. Cada señal va fijada. El resultado se publica como respuesta a esa señal.
@@ -337,7 +366,7 @@ La pregunta final no es cortesía: abre la conversación 1 a 1 y detecta al que 
 
 1. **Montar el Grupo 1** con el Kit de Bienvenida fijado y el ciclo semanal de §2. Es el que ataca la fuga más grande.
 2. **Producir en lote el ciclo semanal evergreen** del Grupo 1 — se hace una vez y sirve para todas las cohortes.
-3. **Corregir el Módulo 3 del Manual**: incorporar la tabla de capital ($160 / $500 / $1.000) y quitar la línea *"Ganancia estimada: 80 USD mensuales"*, que es una proyección de rentabilidad y choca con el compromiso de no prometerlas.
+3. **Producir los módulos 3, 4 y 5 del Manual** (instalación, cómo leer una alerta, elige tu estrategia) y aplicar las correcciones a los módulos 6 y 7 — ver `synapse_manual_estructura.md`. Sin eso el Grupo 1 no tiene a dónde mandar a la gente.
 4. **Fijar el redactado de los win rates**: nunca "60%" a secas, siempre nombrando la estrategia (§0).
 5. **Reescribir la promesa de break-even automático** donde esté publicada (estructura de alerta de marca, landing, skill `synapse-escenarios`), ya que en realidad lo gestiona cada persona.
 6. Reconciliar las métricas pendientes para desbloquear el recap de los lunes.

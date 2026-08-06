@@ -8,29 +8,41 @@ Los tres grupos no se planifican igual, porque sus audiencias se comportan disti
 
 | Grupo | Audiencia | Consecuencia |
 |---|---|---|
-| **1 · Punto de Partida** | Rota cada 15 días | **El mismo ciclo se repite las 4 semanas.** Cada cohorte lo ve por primera vez. Se produce una vez y sirve para siempre |
+| **1 · Punto de Partida** | Rota cada 15 días | **No lleva calendario.** La formación va en el Manual, autoguiado. El grupo corre al ritmo del mercado |
 | **2 · Comunidad** | Se acumula, nadie sale | **4 semanas distintas.** Repetir sería aburrir a la misma gente |
 | **3 · Sala de Operación** | Estable | **Ritmo fijo, contenido variable** |
 
-Por eso el trabajo real de producción es mucho menor de lo que parecen 60 publicaciones: **13 piezas nuevas**, y 4 de ellas ya existen.
+Por eso el trabajo real de producción es mucho menor de lo que parecen 60 publicaciones: **12 piezas nuevas**, y 4 de ellas ya existen.
 
 ---
 
 ## Grupo 1 · Punto de Partida
 
-**Ciclo fijo. Idéntico las 4 semanas.**
+**No lleva calendario semanal.** La formación vive en el Manual (`synapse_manual_estructura.md`), que la persona recibe al instalar el indicador y recorre a su ritmo. El grupo corre al ritmo del mercado.
 
-| Día | Bloque | Pieza |
-|---|---|---|
-| **Lunes** | Instalación | *"Déjalo andando en 5 minutos"* — instalar en TradingView y activar alertas |
-| **Martes** | Lectura de la alerta | Anatomía de una alerta: entrada, SL 160 pips / $16, TP1, TP2 · **+ encuesta de activación** |
-| **Miércoles** | Elige tu estrategia | TP1 vs TP2: las dos dejan +$32 cada 10 operaciones, exigen distinto aguante |
-| **Jueves** | Primera operación | Invitación a dar el paso + celebración de quienes ya la hicieron esta semana |
-| **Viernes** | Gestión y proceso | Video del school + *"por qué no se mueve el stop"* |
+### Todos los días, de lunes a viernes
 
-**Todos los días:** señales en vivo de las dos sesiones. Ritual de entrada a cada persona nueva, el mismo día que llega.
+| Hora | Pieza |
+|---|---|
+| **7:00** | Apertura NY — *"el indicador empezó a buscar oportunidad"* |
+| Durante | Señal, si aparece · resultado como respuesta a la señal |
+| **18:00** | Apertura Asia — *"el indicador empezó a buscar oportunidad"* |
+| Durante | Señal, si aparece · resultado como respuesta a la señal |
+| Cierre sin señal | *"cerramos sin alerta. Sin señal no hay operación, y eso también es el sistema funcionando"* |
 
-**Lo único que cambia semana a semana:** las señales reales y los nombres que se celebran el jueves. El contenido base no se toca.
+### Lo único que se programa
+
+| Día | Pieza |
+|---|---|
+| **Lunes** | Mensaje de mentalidad, pegado a la apertura |
+| **Martes** | **Encuesta de activación**: ¿ya hiciste tu primera operación? |
+| **Miércoles** | Mensaje de mentalidad |
+| **Jueves** | Celebración de las primeras operaciones de la semana |
+| **Viernes** | Mensaje de mentalidad |
+
+Los mensajes salen del **banco rotativo de 8 temas** (`estructura_grupos_whatsapp.md` §2). Rotando 3 por semana, nadie ve una repetición dentro de sus 15 días.
+
+**Además, cada día:** ritual de entrada a cada persona nueva, el mismo día que llega, y Q&A en las ventanas de sesión.
 
 ---
 
@@ -60,7 +72,7 @@ Las 4 educativas salen de `synapse_serie_autosabotaje_prompts.md`, que ya está 
 |---|---|
 | **Lunes** | Recap de la semana anterior |
 | **Martes** | Señales · si no hubo, *"hoy no hubo alerta"* explícito |
-| **Miércoles** | Recordatorio de disciplina — un error del Módulo 5, uno distinto cada semana |
+| **Miércoles** | Recordatorio de disciplina — un error del Módulo 8, uno distinto cada semana |
 | **Jueves** | **Encuesta de proceso** (¿respetaste tu plan en tus últimas 5 operaciones?) |
 | **Viernes** | Cierre de semana + clase en vivo |
 
@@ -74,15 +86,17 @@ Las 4 educativas salen de `synapse_serie_autosabotaje_prompts.md`, que ya está 
 
 | # | Pieza | Grupo | Estado |
 |---|---|---|---|
-| 1-5 | Las 5 piezas del ciclo semanal | 1 | ⬜ Producir — **una sola vez, sirve para todas las cohortes** |
-| 6 | Kit de Bienvenida (mensaje fijado) | 1 | ⬜ Producir |
-| 7 | Checklist Antes de Operar (mensaje fijado) | 3 | ⬜ Extraer del Módulo 7 del Manual |
-| 8-11 | 4 educativas de autosabotaje | 2 | ✅ Ya existen (piezas A, C, D, F) |
-| 12-15 | 4 recordatorios de disciplina | 3 | ⬜ Extraer del Módulo 5 del Manual |
-| 16-18 | 3 testimonios reales | 2 | ⚠️ Requiere permiso explícito de cada persona |
-| 19 | 1 pérdida bien gestionada | 2 | ⬜ Elegir una operación real del mes |
+| 1-8 | Banco de 8 mensajes de mentalidad | 1 | ⬜ Producir — **una sola vez, sirve para todas las cohortes** |
+| 9 | Kit de Bienvenida (mensaje fijado) | 1 | ⬜ Producir |
+| 10 | Checklist Antes de Operar (mensaje fijado) | 3 | ⬜ Extraer del Módulo 10 del Manual |
+| 11-14 | 4 educativas de autosabotaje | 2 | ✅ Ya existen (piezas A, C, D, F) |
+| 15-18 | 4 recordatorios de disciplina | 3 | ⬜ Extraer del Módulo 8 del Manual |
+| 19-21 | 3 testimonios reales | 2 | ⚠️ Requiere permiso explícito de cada persona |
+| 22 | 1 pérdida bien gestionada | 2 | ⬜ Elegir una operación real del mes |
 
-**Total nuevo a producir: 13 piezas.** El resto ya existe o se extrae del Manual.
+**Total nuevo a producir: 12 piezas.** El resto ya existe o se extrae del Manual.
+
+**Aparte, y es lo que desbloquea todo:** los módulos 3, 4 y 5 del Manual (instalación, cómo leer una alerta, elige tu estrategia). Sin ellos el Grupo 1 no tiene a dónde mandar a la gente.
 
 **El cuello de botella real son los testimonios**, no el contenido: dependen de gente real que dé permiso. Conviene empezar a pedirlos ya, antes del lunes 1, porque es lo único del plan que no depende del equipo.
 
