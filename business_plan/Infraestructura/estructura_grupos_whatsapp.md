@@ -20,7 +20,7 @@
 | Stop Loss | 160 | **$16** |
 | TP1 | 160 | **$16** (1R) |
 | TP2 | 320 totales | **$32** (2R) |
-| Break-even | Al alcanzar TP1 | Riesgo pasa a $0 |
+| Break-even | **Opcional** — lo decide cada persona | Ver abajo |
 
 ### Las dos estrategias
 
@@ -42,6 +42,17 @@ El cliente **elige una y la sostiene**. No se mezclan. Existen dos porque muchas
 **El peor resultado posible es elegir TP2 y abandonarla a mitad de camino:** te comés las pérdidas de TP2 sin quedarte para cobrar sus ganancias. Este es el punto educativo más importante de todo el sistema.
 
 > ⚠️ **Cuidado al comunicarlo:** nunca decir "60%" a secas. Sin decir a qué estrategia pertenece, un 60% y un 40% mencionados juntos se leen como un 100% de efectividad. La fórmula segura siempre nombra la estrategia: *"operando a TP1, 6 de cada 10 operaciones son ganadoras"*.
+
+### El break-even: la tercera decisión
+
+**No es automático. Cada persona decide si lo usa y dónde lo pone.** Tiene un costo que hay que decir claro:
+
+- **Protege:** una operación que se iba a stop loss cierra en $0 en vez de −$16.
+- **Cuesta:** una operación que baja, no toca el stop, y después sí llega a TP1 o TP2, se cierra en $0 o con muy poco. El break-even te saca de operaciones que habrían ganado.
+
+Por eso **los win rates de la tabla de arriba son sin break-even**: son la línea base limpia, stop contra target. El break-even es una capa que cada quien agrega encima, y mueve los dos lados de la cuenta a la vez.
+
+> ⚠️ **Revisar copy publicado:** la estructura de alerta de la marca dice *"break-even automático al alcanzar TP1"* y lo lista entre las decisiones que el sistema elimina. Si en realidad lo gestiona cada persona, esa promesa hay que reescribirla donde aparezca.
 
 ### Capital de entrada
 
@@ -101,7 +112,7 @@ El trial es continuo, sin fechas de corte. La gente entra cualquier día, así q
 |---|---|---|
 | Lunes | **Instalación** | Micro-tutorial: cómo dejarlo andando en TradingView |
 | Martes | **Lectura de la alerta** | Qué significan SL 160 pips / $16, TP1, TP2, break-even |
-| Miércoles | **Elegí tu estrategia** | TP1 o TP2: las dos dejan lo mismo, exigen distinto (§0) |
+| Miércoles | **Elegí tu estrategia** | TP1 o TP2 · y si usás break-even o no (§0) |
 | Jueves | **Primera operación** | Invitación a dar el paso + celebración de quienes ya la hicieron |
 | Viernes | **Gestión y proceso** | Por qué no se mueve el stop · cómo se lee un resultado, ganado o perdido |
 | Fin de semana | **Ecosistema** | Clase en vivo + video del school |
@@ -255,4 +266,5 @@ Una por grupo, cada una con un trabajo distinto. **No es relleno de engagement: 
 2. **Producir en lote el ciclo semanal evergreen** del Grupo 1 — se hace una vez y sirve para todas las cohortes.
 3. **Corregir el Módulo 3 del Manual**: incorporar la tabla de capital ($160 / $500 / $1.000) y quitar la línea *"Ganancia estimada: 80 USD mensuales"*, que es una proyección de rentabilidad y choca con el compromiso de no prometerlas.
 4. **Fijar el redactado de los win rates**: nunca "60%" a secas, siempre nombrando la estrategia (§0).
-5. Reconciliar las métricas pendientes para desbloquear el recap de los lunes.
+5. **Reescribir la promesa de break-even automático** donde esté publicada (estructura de alerta de marca, landing, skill `synapse-escenarios`), ya que en realidad lo gestiona cada persona.
+6. Reconciliar las métricas pendientes para desbloquear el recap de los lunes.
