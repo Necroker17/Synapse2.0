@@ -39,7 +39,7 @@ El cliente **elige una y la sostiene**. No se mezclan. Existen dos porque muchas
 - **TP1** gana más seguido (6 de 10). Emocionalmente sostenible.
 - **TP2** gana el doble por acierto, pero pierde 6 de 10 y con rachas perdedoras más largas. Exige mucho más aguante.
 
-**El peor resultado posible es elegir TP2 y abandonarla a mitad de camino:** te comés las pérdidas de TP2 sin quedarte para cobrar sus ganancias. Este es el punto educativo más importante de todo el sistema.
+**El peor resultado posible es elegir TP2 y abandonarla a mitad de camino:** te comes las pérdidas de TP2 sin quedarte para cobrar sus ganancias. Este es el punto educativo más importante de todo el sistema.
 
 > ⚠️ **Cuidado al comunicarlo:** nunca decir "60%" a secas. Sin decir a qué estrategia pertenece, un 60% y un 40% mencionados juntos se leen como un 100% de efectividad. La fórmula segura siempre nombra la estrategia: *"operando a TP1, 6 de cada 10 operaciones son ganadoras"*.
 
@@ -112,20 +112,20 @@ El trial es continuo, sin fechas de corte. La gente entra cualquier día, así q
 |---|---|---|
 | Lunes | **Instalación** | Micro-tutorial: cómo dejarlo andando en TradingView |
 | Martes | **Lectura de la alerta** | Qué significan SL 160 pips / $16, TP1, TP2, break-even |
-| Miércoles | **Elegí tu estrategia** | TP1 o TP2 · y si usás break-even o no (§0) |
+| Miércoles | **Elige tu estrategia** | TP1 o TP2 · y si usas break-even o no (§0) |
 | Jueves | **Primera operación** | Invitación a dar el paso + celebración de quienes ya la hicieron |
 | Viernes | **Gestión y proceso** | Por qué no se mueve el stop · cómo se lee un resultado, ganado o perdido |
 | Fin de semana | **Ecosistema** | Clase en vivo + video del school |
 
 ### El hito que define todo
 
-**Una operación completa vivida.** Si en 15 días la persona no vio una operación de principio a fin —entrada, TP1, break-even moviendo el stop, TP2—, no conectó con el producto: vio una demo. Todo el grupo debe estar diseñado alrededor de que ese hito ocurra, y ocurra temprano.
+**Una operación completa vivida.** Si en 15 días la persona no vio una operación de principio a fin —entrada, recorrido, cierre en TP o en stop—, no conectó con el producto: vio una demo. Todo el grupo debe estar diseñado alrededor de que ese hito ocurra, y ocurra temprano.
 
 Por eso las señales en tiempo real **sí** deben entrar a este grupo. El **61% de la audiencia (20 de 33) eligió "recibir las alertas con el riesgo exacto en $USD en el celular" como el atributo más valioso del producto** [DATO — `synapse_messaging_bible.md` §4]. Es el diferencial #1. Un trial que no lo demuestra, no demuestra el producto.
 
 ### Mejoradores de uso
 
-1. **Ritual de entrada.** Cada persona nueva recibe un saludo con nombre y una sola instrucción: *"empezá por el mensaje fijado"*. En un grupo de cohorte rotativa, sin ritual de entrada la gente se siente intrusa y se queda en silencio los 15 días.
+1. **Ritual de entrada.** Cada persona nueva recibe un saludo con nombre y una sola instrucción: *"empieza por el mensaje fijado"*. En un grupo de cohorte rotativa, sin ritual de entrada la gente se siente intrusa y se queda en silencio los 15 días.
 
 2. **Kit de Bienvenida fijado**, con índice numerado: Manual → checklist → calculadora de riesgo → videos del school. Numerado, no como lista suelta: el usuario necesita saber cuál es el paso 1.
 
@@ -260,7 +260,80 @@ Una por grupo, cada una con un trabajo distinto. **No es relleno de engagement: 
 
 ---
 
-## 6. Próximos pasos
+## 6. Textos operativos de cada grupo
+
+**Regla de nombres:** el nombre interno describe el trabajo que hace el grupo; el nombre visible describe el beneficio para quien entra. Un grupo llamado "Testimonios" le avisa al usuario que le van a vender. Uno llamado "Comunidad" le dice que pertenece.
+
+### Grupo 1 · Punto de Partida
+
+**Nombre visible:** `Synapse · Punto de Partida`
+**Descripción:** Tus 15 días de prueba. Aquí aprendes a usar el indicador paso a paso. Empieza por el mensaje fijado.
+
+**Mensaje fijado:**
+
+> **Bienvenido a Synapse.**
+> Tienes 15 días para probar el indicador. Este grupo existe para que los aproveches de verdad.
+>
+> Empieza por aquí, en orden:
+> 1. Manual Synapse — qué hace y qué no hace
+> 2. Instalación en TradingView
+> 3. Cómo leer una alerta: entrada, stop, TP1, TP2
+> 4. Elige tu estrategia: TP1 o TP2
+> 5. Checklist antes de operar
+>
+> Cada semana recorremos estos temas completos. Si entraste hoy, en 7 días ya viste todo.
+>
+> Dudas: pregunta aquí. Respondemos en horario de sesión (7:00-11:00 y 18:00-22:00).
+>
+> *El trading implica riesgo real de pérdida de capital. Nada de lo que compartimos es asesoría financiera.*
+
+**Normas (3, visibles):**
+1. Pregunta lo que necesites. Aquí nadie sabía nada al principio.
+2. Las señales no salen de este grupo.
+3. Nadie promete resultados, ni nosotros ni nadie.
+
+**Ritual de entrada:** *"Bienvenido [Nombre]. Empieza por el mensaje fijado, ahí está todo en orden. ¿Ya tienes el indicador instalado?"*
+La pregunta final no es cortesía: abre la conversación 1 a 1 y detecta al que se va a quedar trabado, el día 1 en vez del día 12.
+
+**Ritual de salida (día 15):** *"[Nombre], hoy cierra tu prueba. Cuéntanos qué te pasó en estos 15 días, hayas operado o no — nos sirve para todos."* Quien no compra pasa al Grupo 2; la respuesta a esa pregunta es la mejor materia prima de objeciones que va a producir el negocio.
+
+### Grupo 2 · Sala de Testimonios *(nombre interno)*
+
+**Nombre visible:** `Synapse · Comunidad`
+**Descripción:** Resultados reales, clases abiertas y lo que va construyendo la comunidad. Sin señales en vivo.
+
+**Mensaje fijado:**
+
+> **Esta es la comunidad de Synapse.**
+> Aquí compartimos resultados ya cerrados, clases en vivo y el proceso real de quienes operan el sistema. Ganadas y perdidas, las dos.
+>
+> No hay señales en tiempo real en este grupo. Esas van en la Sala de Operación, para quienes tienen plan activo.
+>
+> ¿Quieres volver a probar el indicador o resolver una duda? Escríbenos.
+>
+> *El trading implica riesgo real de pérdida de capital. Nada de lo que compartimos es asesoría financiera.*
+
+**Normas:** solo publica el equipo. Es un grupo de observación, no de conversación — y esa es su fuerza: nadie tiene que exponerse para estar aquí.
+
+**Ritual de entrada:** el usuario llega aquí después de que venció su trial, en un momento de posible frustración. El mensaje de bienvenida no debe vender: *"[Nombre], te dejamos en la comunidad. Aquí vas a seguir viendo cómo opera el sistema, sin costo. Cuando quieras volver, aquí estamos."* Vender en ese instante confirma la sospecha de que todo era un embudo.
+
+### Grupo 3 · Sala de Operación
+
+**Nombre visible:** `Synapse · Sala de Operación`
+**Descripción:** Señales en vivo de las sesiones de Nueva York y Asia. Solo planes activos.
+
+**Mensaje fijado:** el **Checklist Antes de Operar** (Módulo 7 del Manual), sin adornos. Es lo que el usuario necesita a un toque de distancia en el momento de ejecutar.
+
+**Normas (3, visibles):**
+1. Cada señal va fijada. El resultado se publica como respuesta a esa señal.
+2. Declara tu estrategia (TP1 o TP2) y sosténla. Cambiarla a mitad de racha es el error más caro.
+3. Aquí se publican las perdedoras igual que las ganadas.
+
+**Ritual de entrada:** *"Bienvenido a la Sala, [Nombre]. Antes de la primera señal: ¿con qué estrategia vas a operar, TP1 o TP2?"* Hacer que lo declare en voz alta el primer día convierte una decisión privada en un compromiso público, y es el mejor predictor de si va a sostenerla.
+
+---
+
+## 7. Próximos pasos
 
 1. **Montar el Grupo 1** con el Kit de Bienvenida fijado y el ciclo semanal de §2. Es el que ataca la fuga más grande.
 2. **Producir en lote el ciclo semanal evergreen** del Grupo 1 — se hace una vez y sirve para todas las cohortes.
