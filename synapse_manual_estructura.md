@@ -114,7 +114,7 @@ $160 es el **mínimo para empezar**, no el recomendado. Y como TP2 pierde 6 de c
 
 ## Pendientes
 
-1. Producir los módulos 3, 4 y 5.
+1. ✅ Módulos 3, 4 y 5 redactados — `synapse_manual_modulos_3_4_5.md`. Falta maquetarlos y agregar la captura de verificación del Módulo 3.
 2. Aplicar las dos correcciones a los módulos 6 y 7.
 3. Asociar videos del school a cada módulo, a medida que existan.
 4. Revisar la promesa de *"break-even automático"* en copy ya publicado (landing, estructura de alerta, skill `synapse-escenarios`): en realidad lo gestiona cada persona.
