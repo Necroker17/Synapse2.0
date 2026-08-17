@@ -82,9 +82,24 @@ La separación es arquitectura de embudo normal, **no cloaking**: todo el mundo 
 
 `lib/track.ts` — no-op si el píxel no está instalado. Se dispara `Lead` al enviar el formulario. **Optimizar por `Lead`, no por `StartTrial`**, mientras el volumen semanal no se acerque a 50 (hoy hay 5 activaciones totales). Nunca usar `Purchase` para un trial gratuito.
 
-## Leads — SIN backend aún
+## Leads — sin backend todavía
 
-`app/api/lead/route.ts` es un **stub** (valida 4 campos, `console.log`, responde 200). Punto de integración futuro: email/CRM/Google Sheet. El formulario (`components/invite-card.tsx`) ya valida client-side y tiene estado de éxito/error.
+`app/api/lead/route.ts` **fue eliminado** (2026-08-16). Era un stub que validaba y hacía `console.log`: no persistía nada, registraba datos personales en los logs y bloqueaba el export estático.
+
+El formulario (`components/trial-form.tsx`) ahora hace POST **directo desde el cliente** a `process.env.NEXT_PUBLIC_LEAD_WEBHOOK` — el webhook de Make que alimenta la base en Sheets (`business_plan/Infraestructura/flujos_automatizacion.md`). Enviar desde el cliente hace que funcione igual en el export estático y en un servidor.
+
+**Mientras la variable no esté definida, el formulario entra en modo vista previa:** valida y muestra la interfaz, pero no finge un envío ni recoge datos que se perderían. Para activarlo: definir `LEAD_WEBHOOK` como secreto del repo (lo consume el workflow) o `NEXT_PUBLIC_LEAD_WEBHOOK` en el entorno del hosting.
+
+## Dos destinos de build
+
+| Comando | Destino | Qué hace |
+|---|---|---|
+| `npm run build` | Vercel / servidor | Build normal |
+| `GH_PAGES=1 npm run build` | GitHub Pages | Export estático a `out/`, con `basePath: /Synapse2.0` |
+
+La condición vive en `next.config.ts`. El despliegue a Pages lo hace `.github/workflows/deploy-pages.yml`.
+
+> ⚠️ El workflow publica **solo `Landing_SynapseAI/out`**, nunca la raíz del repo. Un sitio de GitHub Pages es público aunque el repositorio sea privado, y `business_plan/` contiene el reparto entre socios, el pricing y los datos de campaña. No cambiar el `path` del artefacto.
 
 ## Regla de imágenes
 

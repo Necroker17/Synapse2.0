@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -72,14 +72,25 @@ function validate(form: FormState): Partial<Record<keyof FormState, string>> {
   return errors;
 }
 
+/**
+ * Destino real de los leads: el webhook de Make que alimenta la base en Google
+ * Sheets (`business_plan/Infraestructura/flujos_automatizacion.md`).
+ *
+ * Se envía directo desde el cliente a propósito — así funciona igual en el
+ * export estático de GitHub Pages y en un servidor. Mientras la variable no
+ * esté definida, el formulario entra en **modo vista previa**: valida y muestra
+ * la interfaz, pero NO finge un envío ni recoge datos que se perderían.
+ */
+const LEAD_WEBHOOK = process.env.NEXT_PUBLIC_LEAD_WEBHOOK;
+
 function TrialFormFields() {
   const [form, setForm] = useState<FormState>(EMPTY);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>(
     {}
   );
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
-    "idle"
-  );
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "sent" | "error" | "preview"
+  >("idle");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -87,9 +98,14 @@ function TrialFormFields() {
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
 
+    if (!LEAD_WEBHOOK) {
+      setStatus("preview");
+      return;
+    }
+
     setStatus("sending");
     try {
-      const res = await fetch("/api/lead", {
+      const res = await fetch(LEAD_WEBHOOK, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -101,6 +117,20 @@ function TrialFormFields() {
     } catch {
       setStatus("error");
     }
+  }
+
+  if (status === "preview") {
+    return (
+      <div className="flex flex-col items-center gap-3 py-6 text-center">
+        <Info className="size-10 text-tv-blue" aria-hidden="true" />
+        <p className="text-lg font-bold text-white">Esto es una vista previa</p>
+        <p className="max-w-xs text-sm leading-relaxed text-tv-text-dim">
+          El formulario todavía no está conectado, así que no enviamos nada ni
+          guardamos tus datos. Escríbenos por los canales de siempre para
+          activar tu acceso.
+        </p>
+      </div>
+    );
   }
 
   if (status === "sent") {
