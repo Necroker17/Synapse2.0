@@ -13,10 +13,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+/**
+ * Metadata de la landing del anuncio.
+ *
+ * Reescrita para no describir el producto como servicio de señales: Meta lee
+ * el título y la descripción de la URL de destino. Léxico permitido en
+ * `business_plan/Campana/landing_trial_meta.md` §4 — "software",
+ * "notificaciones", nunca "señales", "rentabilidad" ni "inversión".
+ */
 export const metadata: Metadata = {
-  title: "Synapse AI Indicator — Scanner institucional para Oro (XAUUSD) M15",
+  title: "Synapse AI — Tu plan de trading, convertido en notificaciones",
   description:
-    "Script invite-only para TradingView. Synapse AI detecta señales en Oro M15 y calcula entrada, SL, TP1 y TP2 con gestión de riesgo automática — matemática, no emociones.",
+    "Software para TradingView que detecta las condiciones que tú defines y te envía la decisión completa al celular: qué, dónde y cuánto arriesgas en dólares. Prueba 15 días, sin tarjeta.",
 };
 
 export default function RootLayout({

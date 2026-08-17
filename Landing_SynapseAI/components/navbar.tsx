@@ -5,18 +5,20 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { BrainCircuit } from "lucide-react";
 
-const NAV_LINKS = [
-  { href: "#grafico", label: "Gráfico" },
-  { href: "#parametros", label: "Parámetros" },
-  { href: "#instalar", label: "Instalación" },
-] as const;
-
+/**
+ * Navbar de la landing de anuncio.
+ *
+ * Un solo CTA en toda la página y nada que compita con él: se quitaron los
+ * enlaces de sección para no repartir la atención, y no hay enlace a precios
+ * ni a nada externo — Meta rastrea los enlaces salientes.
+ * Ver `business_plan/Campana/landing_trial_meta.md` §2 y §7.
+ */
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-tv-border bg-tv-bg/80 backdrop-blur-md">
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 md:px-6">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4 md:px-6">
         <Link
-          href="#"
+          href="/"
           className="flex min-w-0 items-center gap-2.5"
           aria-label="Synapse AI — inicio"
         >
@@ -38,23 +40,11 @@ export function Navbar() {
           </Badge>
         </Link>
 
-        <nav aria-label="Principal" className="hidden items-center gap-1 md:flex">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="rounded-md px-3 py-2 text-sm font-semibold text-tv-text-dim transition-colors duration-200 hover:bg-tv-panel-2 hover:text-white"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
         <Button
           asChild
-          className="h-9 cursor-pointer bg-tv-blue px-4 font-bold text-white transition-colors duration-200 hover:bg-tv-blue/85"
+          className="h-9 cursor-pointer bg-tv-green px-4 font-bold text-white transition-colors duration-200 hover:bg-tv-green/85"
         >
-          <a href="#instalar">Instalar gratis</a>
+          <a href="#prueba">Probar gratis</a>
         </Button>
       </div>
     </header>

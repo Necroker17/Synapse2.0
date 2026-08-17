@@ -1,51 +1,34 @@
-import { CandlestickChart, LayoutDashboard } from "lucide-react";
 import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/hero";
-import { InviteCard } from "@/components/invite-card";
-import { ParamsPanel } from "@/components/params-panel";
+import { HeroTrial } from "@/components/hero-trial";
+import { ProblemSection } from "@/components/problem-section";
+import { DecisionsSection } from "@/components/decisions-section";
+import { HowItLooks } from "@/components/how-it-looks";
+import { NotAdvice } from "@/components/not-advice";
+import { TrialClose } from "@/components/trial-close";
 import { Footer } from "@/components/footer";
-import { ImagePlaceholder } from "@/components/image-placeholder";
 
+/**
+ * Landing del anuncio — objetivo único: activación del trial de 15 días.
+ *
+ * Arquitectura y restricciones: `business_plan/Campana/landing_trial_meta.md`.
+ * Reglas que NO se pueden romper en esta página:
+ *  - Cero cifras de rendimiento (win rate, PF, pips). Viven en /metodo.
+ *  - Cero enlaces salientes a bróker, bono o checkout.
+ *  - Cero precios. La página de planes no se enlaza desde aquí.
+ *  - El problema se redacta en tercera persona.
+ *  - Un solo CTA.
+ */
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
-        <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start lg:gap-8 lg:px-6">
-          <div className="lg:min-w-0">
-            <Hero />
-
-            {/* Capturas reales del indicador — assets pendientes (regla de imágenes) */}
-            <section
-              aria-label="Capturas reales del indicador"
-              className="px-4 pt-10 md:px-6 lg:px-0"
-            >
-              <div className="grid gap-4 sm:grid-cols-2">
-                <ImagePlaceholder
-                  file="captura-senal-buy.png"
-                  label="Captura real: señal BUY con cajas TP/SL en el gráfico"
-                  width={640}
-                  height={400}
-                  icon={CandlestickChart}
-                />
-                <ImagePlaceholder
-                  file="captura-dashboard.png"
-                  label="Captura real: dashboard de telemetría en TradingView"
-                  width={640}
-                  height={400}
-                  icon={LayoutDashboard}
-                />
-              </div>
-            </section>
-          </div>
-
-          {/* Ficha lateral de invitación (sticky en desktop) */}
-          <div className="px-4 pt-10 md:px-6 lg:sticky lg:top-20 lg:px-0 lg:pt-16">
-            <InviteCard />
-          </div>
-        </div>
-
-        <ParamsPanel />
+      <main className="mx-auto max-w-6xl px-0 lg:px-6">
+        <HeroTrial />
+        <ProblemSection />
+        <DecisionsSection />
+        <HowItLooks />
+        <NotAdvice />
+        <TrialClose />
       </main>
       <Footer />
     </>

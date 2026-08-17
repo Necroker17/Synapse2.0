@@ -6,6 +6,7 @@
 
 - **Métrica norte (decidida 2026-07-06):** % de trials que llegan al día 15 y convierten a pago (STANDARD, PRO o PREMIUM). Toda priorización de experimentos de producto/marketing debe justificarse contra esta métrica.
 - Pendiente: horizonte temporal del objetivo (ej. % objetivo a alcanzar y para cuándo) — aún no definido.
+- **Estado real de la métrica norte (2026-08-13): `null`.** La campaña está en vivo pero ninguna cohorte de trial ha cumplido 15 días. Lo único medido es la etapa anterior: **5 de 15 llegadas reclamaron el trial (33.3%, n=15, IC95% 15.2–58.2%)** — muestra demasiado chica para planificar. Registro y definiciones en `business_plan/Campana/metricas_embudo.md`.
 
 ## 2. Posicionamiento y narrativa vigente
 
@@ -32,7 +33,20 @@
 
 ## 4. Backlog estratégico
 
-- [ ] Consolidar los 3 roadmaps de `ROADMAP/` en un único plan accionable (sección 1 y 3 de este doc) y archivar los originales.
+### 🔥 Abierto ahora — rediseño de la oferta (2026-08-13)
+
+Análisis completo en `business_plan/Pricing_y_Pagos/oferta_definitiva.md`; benchmarks en `business_plan/Pricing_y_Pagos/estudio_mercado_competencia.md`. Seis decisiones esperando al usuario:
+
+- [ ] **Depósito mínimo de la oferta por broker: ¿$300 o $1,000?** Recomendación: $1,000. Con la distancia de stop documentada, el lote mínimo (0.01) ya arriesga $17.64 — el 5.9% de una cuenta de $300, sin posibilidad de bajarlo. La racha máxima documentada (5 pérdidas) le borra el 26% de la cuenta. **Bloqueante: no publicar la oferta de $300 tal como está.**
+- [ ] **Corregir la escalera de precios invertida:** PREMIUM ($58.25/mes) cuesta más por mes que PRO ($49.83/mes). Recomendación: sacar PREMIUM de la escalera de duración y venderlo como producto de mentoría (no cuesta margen), en lugar de bajarlo a $497 (cuesta $182 netos por venta).
+- [ ] **Obtener por escrito el contrato del broker:** CPA exacto por tramo de depósito, si exige volumen operado, ventana de clawback, y si califica desde Colombia. **Bloqueante** para publicar cualquier oferta por depósito.
+- [ ] **Aceptar CPA plano y rechazar rebate por volumen**, y divulgar públicamente la comisión. Un rebate por volumen pagaría a Synapse por que el cliente sobre-opere, que es exactamente lo que el producto promete evitar.
+- [ ] **Activar pago en cuotas de Hotmart** para STANDARD — baja la barrera de los $197 sin tocar el precio ni romper el compromiso de 3 meses.
+- [ ] Cerrar la definición de "llegada" en el embudo (¿clic, conversación o formulario enviado?) — sin eso el 33.3% no es interpretable. Ver `business_plan/Campana/metricas_embudo.md` §1.
+
+### Resto del backlog
+
+- [ ] Consolidar `ROADMAP/briefing_marketing_audiovisual.md` en este documento y archivar el original. *(Corregido 2026-08-13: este ítem decía "los 3 roadmaps (ChatGPT/Claude/Gemini)" — solo existe un archivo y el historial de git confirma que nunca hubo otros.)*
 - [ ] Resolver la discrepancia Oro/Plata en toda la comunicación (manual, landing, DESCRIPTION.txt).
 - [ ] Auditar la narrativa de la landing sección por sección contra el ángulo de autosabotaje.
 - [ ] Definir métricas de conversión de la landing y cómo medirlas.
@@ -41,7 +55,7 @@
 - [ ] Priorizar y correr los experimentos de retención trial→pago de `business_plan/Crecimiento/product_growth_tasks.md` (secuencia WhatsApp por hito → oferta de conversión anticipada → trial health score).
 - [ ] Calcular el margen neto **final** por plan (margen bruto ya recalculado en `business_plan/Finanzas/financial_model.md` §2.1 con `fee_pago` de Hotmart confirmado — falta restar `costo_soporte_mensual` y `costo_herramientas_mensual`, aún pendientes) para validar que la comisión de embajadores (50%/25%) deja margen sano en el peor caso (PREMIUM con varias renovaciones). Bloqueante antes de lanzar el programa de embajadores.
 - [ ] Verificar en el panel real de Hotmart si la comisión escalonada de afiliados (50% primera venta / 25% re-consumo) es configurable nativamente — ver `business_plan/Pricing_y_Pagos/payment_processing.md` sección 4.
-- [ ] Confirmar con el usuario qué cuenta como "re-consumo" (¿renovación del mismo plan y upgrade cuentan igual?) — ver `business_plan/Embajadores/ambassador_program.md` sección 2.
+- [x] ~~Confirmar con el usuario qué cuenta como "re-consumo" (¿renovación del mismo plan y upgrade cuentan igual?)~~ — **resuelto por la decisión del 2026-07-16** (ver sección 3): el upgrade cuenta como venta nueva (50%), solo la renovación del mismo plan paga 25%.
 - [ ] Definir requerimiento técnico de tracking de referidos (código/link único por embajador) antes de operar el programa.
 - [ ] Llenar las variables de costo/volumen restantes de `business_plan/Finanzas/financial_model.md` (fee de pago, costo de soporte, trials/mes, tasa de conversión, mix de planes, % vía embajador, tasa de re-consumo) en cuanto existan cifras reales, y correr el prompt de `business_plan/Finanzas/google_sheets_prompt.md` cuando la conexión de Claude Code a Google Sheets esté lista.
 - [ ] Definir el vehículo legal del reparto con Gustavo y Meli (equity formal con vesting vs. revenue share continuo) y formalizar con acuerdo de socios/advisor — idealmente con acompañamiento legal/contable. Ver `business_plan/Finanzas/profit_split.md` sección 2.
@@ -49,5 +63,7 @@
 - [ ] Recalcular `business_plan/Finanzas/reporte_proyeccion_2026.md` en cuanto exista costo de soporte real, tasa de retención medida (a partir de las renovaciones de octubre) y confirmación de si julio realmente paga comisión de embajador en su totalidad.
 
 ## 5. Modelo de negocio
+
+⚠️ **Rediseño de oferta en curso (2026-08-13).** `business_plan/Pricing_y_Pagos/pricing_strategy.md` sigue siendo la fuente de verdad **vigente**, pero tiene dos defectos ya diagnosticados (escalera de precios invertida, y la nueva oferta por depósito sin validar). No propagar sus precios a piezas públicas nuevas hasta resolver las decisiones de la sección 4. Análisis: `business_plan/Pricing_y_Pagos/oferta_definitiva.md` · Benchmarks: `business_plan/Pricing_y_Pagos/estudio_mercado_competencia.md` · Datos reales de campaña: `business_plan/Campana/metricas_embudo.md`.
 
 Ver `business_plan/Pricing_y_Pagos/pricing_strategy.md` (fuente de verdad de pricing y embudo), `business_plan/Crecimiento/product_growth_tasks.md` (backlog de experimentos de retención), `business_plan/Embajadores/ambassador_program.md` (comisiones de embajadores), `business_plan/Finanzas/financial_model.md` (fórmulas de margen y costos operativos confirmados), `business_plan/Embajadores/ambassador_earnings_projection.md` (proyección de ingresos de embajadores a 12 meses, escenario hipotético), `business_plan/Finanzas/profit_split.md` (reparto de la ganancia libre entre fundador, Gustavo y Meli), `business_plan/Embajadores/ambassador_scenarios.md` (matriz de escenarios de ingreso de embajadores por volumen y retención), `business_plan/Finanzas/reporte_proyeccion_2026.md` (reporte ejecutivo de proyección jul-dic 2026 y reparto, para presentar a las 4 partes del negocio), `business_plan/Dashboard/index.html` (simulador interactivo — mismas fórmulas de `financial_model.md` y `ambassador_scenarios.md`, con sliders para volumen, retención, precio y costos; recalcula en vivo) `business_plan/Infraestructura/README.md` (arquitectura de sistemas, automatizaciones de Make/Manychat y procesos manuales de soporte) y `business_plan/Embajadores/Presentacion/index.html` (presentación interactiva de reclutamiento del programa de embajadores, con calculadora de metas e identidad de marca Synapse).

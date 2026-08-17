@@ -1,0 +1,64 @@
+name: Deploy landing a GitHub Pages
+
+# Publica ÚNICAMENTE el export estático de Landing_SynapseAI.
+# Nunca la raíz del repo: business_plan/ contiene el reparto entre socios,
+# el pricing y los datos de campaña, y un sitio de Pages es público aunque
+# el repositorio sea privado.
+
+on:
+  push:
+    branches: [landing-trial-meta, main]
+    paths:
+      - "Landing_SynapseAI/**"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Landing_SynapseAI
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: Landing_SynapseAI/package-lock.json
+
+      - run: npm ci
+
+      - name: Build (export estático)
+        env:
+          GH_PAGES: "1"
+          # Cuando exista el webhook de Make, definirlo como secreto del repo
+          # y el formulario deja de estar en modo vista previa.
+          NEXT_PUBLIC_LEAD_WEBHOOK: ${{ secrets.LEAD_WEBHOOK }}
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: Landing_SynapseAI/out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

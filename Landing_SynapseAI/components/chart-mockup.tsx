@@ -289,10 +289,11 @@ export function ChartMockup() {
                 v={TELEMETRY.winRateTp1}
                 accent={GREEN}
               />
-              <DashboardRow
-                k="Señales"
-                v={`${TELEMETRY.signals} · ${TELEMETRY.wonTp1}W/${TELEMETRY.lostTp1}L`}
-              />
+              {/* Se omite el desglose W/L a propósito: 105+82=187 pero se
+                  declaran 188 señales (ver lib/stats.ts). Publicar ambos
+                  números juntos mostraría la contradicción. Reponer cuando el
+                  PM confirme cuál cifra es la correcta. */}
+              <DashboardRow k="Señales" v={`${TELEMETRY.signals}`} />
               <DashboardRow
                 k="TP2 alcanzado"
                 v={`${TELEMETRY.tp2Rate} (${TELEMETRY.tp2Hits})`}
