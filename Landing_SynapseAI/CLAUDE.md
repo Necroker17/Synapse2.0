@@ -28,20 +28,59 @@ Landing **ACTIVA** de Synapse AI Scanner. Replica la página de detalles de un s
 ## Datos verificados (snapshot de telemetría — NO alterar ni redondear)
 
 Única fuente en código: **`lib/stats.ts`** (`TELEMETRY`, `SIGNAL_PANEL`, `LEVELS`).
+Estas cifras **solo pueden aparecer en `/metodo`**, nunca en la landing del anuncio.
+
+> ⚠️ **Inconsistencia abierta:** `105 W + 82 L = 187`, pero se declaran **188** señales. El win rate (55.9%) y el TP2 (35.1%) están calculados sobre 188. Por eso `/metodo` **omite a propósito el desglose W/L** — publicar ambos números juntos mostraría la contradicción. Reponer el desglose cuando el PM confirme cuál cifra es la correcta.
 
 - XAUUSD (Oro) M15 · Núcleo **Claude Opus 4.8** (badge LIVE rojo pulsante).
 - Win Rate TP1 **55.9%** (105W / 82L de 188 señales) · TP2 **35.1%** (66) · PF **1.86**.
 - Racha máx: **14W / 5L** · Weekly **+1723.1 pips** · Monthly **+1086.7 pips**.
 - Señal activa: BUY, STATUS DISPONIBLE, Lotes 0.06, Entrada 4169.92, SL 4152.28, TP1 4187.56, TP2 4205.20, Riesgo 100 USD.
 
-## Estructura de la página (`app/page.tsx`)
+## Arquitectura de rutas (reestructurada 2026-08-16)
 
-1. `Navbar` — sticky glass, logo (placeholder), CTA azul "Instalar gratis".
-2. `Hero` — H1 "Synapse AI Indicator" + narrativa autosabotaje + `ChartMockup` (firma visual: velas SVG animadas del Oro M15, niveles TP/SL, dashboard morado, neurona verde — todo en código, no imagen).
-3. Strip de `ImagePlaceholder` — capturas reales pendientes.
-4. `InviteCard` — ficha lateral sticky (lg): réplica caja invite-only de TradingView. CTA verde "Instalar en mi cuenta (Prueba Gratuita)" → Dialog con **formulario de lead** (decisión del usuario, reemplaza al botón de WhatsApp): Nombre completo, Correo, Teléfono de WhatsApp, Usuario de TradingView.
-5. `ParamsPanel` — réplica interactiva de los inputs (capital, % riesgo, filtros); demostrativo, estado local.
-6. `Footer` — disclaimer de riesgo completo + descargo TradingView (obligatorio).
+La página se reorganizó para que **Meta no clasifique el dominio como servicios financieros**. Brief completo y justificación: `business_plan/Campana/landing_trial_meta.md`. No revertir sin leerlo.
+
+```
+/          ← LANDING DEL ANUNCIO. Objetivo único: activar el trial de 15 días.
+             Software, mecanismo, trial. CERO cifras de rendimiento.
+/metodo/    ← Detalle técnico + telemetría + ChartMockup + ParamsPanel.
+             Pública y rastreable; simplemente no es destino de anuncio.
+```
+
+La separación es arquitectura de embudo normal, **no cloaking**: todo el mundo ve exactamente lo mismo. Nunca servir contenido distinto a un revisor.
+
+### `app/page.tsx`
+
+1. `Navbar` — sticky glass, logo (placeholder). **Un solo CTA** verde "Probar gratis"; se quitaron los enlaces de sección para no repartir la atención.
+2. `HeroTrial` — H1 "Tu plan de trading, convertido en notificaciones" + `PhoneAlert` como firma visual.
+3. `ProblemSection` — "El plan no falla en el papel. Falla a las 9:07." **Siempre en tercera persona.**
+4. `DecisionsSection` — las 5 decisiones eliminadas. El corazón de la página.
+5. `HowItLooks` — dos `PhoneAlert` en secuencia: alerta entrante → equilibrio alcanzado.
+6. `NotAdvice` — "Esto no es asesoría financiera". Sección de mayor apalancamiento; va visible, nunca en el pie.
+7. `TrialClose` — el trial + enlace discreto a `/metodo`.
+8. `Footer` — disclaimer de riesgo completo + descargo TradingView (obligatorio).
+
+### Reglas duras de `/` (romperlas revierte el reposicionamiento)
+
+- **Cero cifras de rendimiento** (win rate, PF, pips). Viven en `/metodo`.
+- **Cero enlaces salientes** a bróker, bono o checkout — Meta rastrea los enlaces.
+- **Cero precios.** `/planes` no se enlaza desde aquí.
+- El problema se redacta en tercera persona: "casi todo trader", nunca "tú".
+- "Notificación"/"alerta", nunca "señal". "Software"/"herramienta", nunca "asesoría".
+- Un solo CTA en toda la página.
+
+### Firma visual: el teléfono, no el gráfico
+
+`components/phone-alert.tsx` reemplaza a `ChartMockup` como hero. El gráfico de velas es el reflejo visual de la categoría "producto financiero" y es lo que dispara la clasificación; además, la alerta con el riesgo en dólares es el atributo que la propia audiencia eligió como más valioso. `ChartMockup` sigue vivo y se usa en `/metodo`.
+
+### Componentes huérfanos tras la reestructura
+
+`invite-card.tsx` e `image-placeholder.tsx` ya no se importan en ninguna ruta. Se conservan sin borrar: el primero por si vuelve la ficha invite-only en otra página, el segundo porque la regla de imágenes lo sigue exigiendo cuando entren las capturas reales. Si en la próxima revisión siguen sin uso, borrarlos.
+
+### Píxel
+
+`lib/track.ts` — no-op si el píxel no está instalado. Se dispara `Lead` al enviar el formulario. **Optimizar por `Lead`, no por `StartTrial`**, mientras el volumen semanal no se acerque a 50 (hoy hay 5 activaciones totales). Nunca usar `Purchase` para un trial gratuito.
 
 ## Leads — SIN backend aún
 

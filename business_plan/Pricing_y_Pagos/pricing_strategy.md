@@ -2,6 +2,8 @@
 
 > Mantenido por `/product`. Fuente de verdad del modelo comercial (pricing, embudo, entregables por plan). Toda pieza pública (landing, DESCRIPTION.txt, WhatsApp, Skool) debe derivar sus precios y entregables de este documento — no de memoria ni de versiones previas de landing.
 
+> ⚠️ **REDISEÑO EN CURSO (2026-08-13).** Este documento sigue vigente, pero tiene dos defectos diagnosticados: (1) la escalera de precios de la sección 2 está **invertida** — PREMIUM cuesta $58.25/mes contra $49.83/mes de PRO; (2) hay una oferta nueva por depósito en el broker sin validar. Antes de propagar estos precios a cualquier pieza pública nueva, leer `oferta_definitiva.md`.
+
 **Decisión oficial (2026-07-06):** modelo de **membresías de tiempo fijo, Invite-Only**. Se descarta el modelo de profit-share manual para priorizar escalabilidad (no requiere verificación manual de resultados por usuario, ni disputas sobre reparto de ganancias — el ingreso es predecible y el onboarding es instantáneo tras el pago).
 
 ---

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "landing-synapseai",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "Landing_SynapseAI", "run", "dev"],
+      "port": 3000
+    }
+  ]
+}

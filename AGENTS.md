@@ -19,13 +19,14 @@ business_plan/                 ← Modelo de negocio, categorizado en subcarpeta
   Finanzas/                     ← financial_model.md, profit_split.md, reporte_proyeccion_2026.md, synapse_business_plan.xlsx + build_business_plan_xlsx.py, google_sheets_prompt.md
   Embajadores/                  ← ambassador_program.md (comisiones), ambassador_earnings_projection.md, ambassador_scenarios.md
     Presentacion/                ← index.html: presentación interactiva de reclutamiento del programa (marca Synapse, calculadora de metas por embajador), un solo archivo autocontenido
-  Pricing_y_Pagos/               ← pricing_strategy.md, payment_processing.md
+  Pricing_y_Pagos/               ← pricing_strategy.md (fuente de verdad vigente), payment_processing.md, estudio_mercado_competencia.md (benchmarks de competencia, ago-2026), oferta_definitiva.md (rediseño de oferta — PENDIENTE de aprobación)
+  Campana/                       ← Datos de conversión OBSERVADOS de la campaña en vivo (no proyecciones) — su mapa: business_plan/Campana/README.md
   Crecimiento/                  ← product_growth_tasks.md (experimentos de retención)
   Hotmart/                      ← Montaje del producto en Hotmart — su mapa: business_plan/Hotmart/README.md
   Dashboard/                    ← index.html: simulador interactivo de escenarios (financiero + embajadores) para uso interno, un solo archivo autocontenido (HTML/CSS/JS vainilla, sin dependencias externas)
   Infraestructura/               ← Arquitectura técnica: base de datos en Sheets, flujos de automatización (Make/Manychat), procesos manuales de soporte — su mapa: business_plan/Infraestructura/README.md
 Formularios/                   ← Formularios reales ya construidos y en vivo (Google Forms) — fuente de verdad de lo publicado, no borradores
-ROADMAP/                       ← 3 roadmaps de lanzamiento (ChatGPT/Claude/Gemini) — PENDIENTE consolidar en ESTRATEGIA.md
+ROADMAP/                       ← briefing_marketing_audiovisual.md (único archivo; los "3 roadmaps" que citaba este mapa nunca existieron en el repo)
 Redes_Sociales/                ← Assets por formato (Branding_Marca, Historias_Stories, Posts_Feed)
 lista_contenido.md             ← Ideas de contenido visual + prompts de generación de imágenes
 prompts_marca_mockups.md       ← 10 prompts unificados de mockups de marca
@@ -37,3 +38,4 @@ prompts_marca_mockups.md       ← 10 prompts unificados de mockups de marca
 2. **Datos duros solo verificados:** stats y precios exactos viven en el `CLAUDE.md` de la versión de landing en curso (cada versión es un snapshot de telemetría distinto — no mezclar entre versiones); nunca inventar ni redondear.
 3. **Ética comercial:** nunca prometer ganancias; disclaimer de riesgo obligatorio en toda pieza pública.
 4. Identidad visual y tono: skill `synapse-brand` (núcleo de marca + sistemas de acento por versión) + el `CLAUDE.md` de la versión en curso (sistema completo).
+5. **Medido vs. proyectado:** los números observados de la campaña viven en `business_plan/Campana/` y siempre llevan su `n`; las proyecciones y supuestos viven en `business_plan/Finanzas/`. No mezclar las dos cosas en un mismo documento ni citar una proyección como si fuera un resultado.
